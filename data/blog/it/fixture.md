@@ -18,6 +18,8 @@ blocks:
 featuredimage: /img/retoric.jpg
 filedownload: /img/retoric.jpg
 featuredpost: true
+formId: ""
+formLabel: ""
 tags:
   - digital
   - alfa-romeo

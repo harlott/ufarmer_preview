@@ -1,0 +1,48 @@
+@import "../../styles/palette.scss";
+
+.competence{
+  .home__competence__container{
+    padding-bottom: 10%;
+  }
+  .home__competence__title{
+    display: none;
+  }
+  .home__competence__action{
+    display: none;
+  }
+  &__top-container{
+    background: get-color-from-palette("background-blue");
+    .main-top-section{
+      background: transparent;
+    }
+    &__img-container{
+      background: transparent;
+      width:95%;
+      margin-right: 0px;
+      margin-left: auto;
+      padding-bottom: 2%;
+    }
+    &__bottom{
+      padding-top: 8%;
+      background: transparent;
+    }
+  }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+@include tablet{
+  .competence__top-container .main-top-section__title h1 {
+    width: 40% !important;
+  }
+}
+
+@include desktop {
+  .compentence__top-container__main-title {
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+}

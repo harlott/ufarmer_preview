@@ -1,0 +1,34 @@
+@import '../../styles/palette.scss';
+
+.tags-block {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  &__tag-element {
+    flex: 1 0 100%;
+    color: get-color-from-palette('background-magenta');
+    font-family: 'gotham-black';
+    font-size: 12px;
+    letter-spacing: 3.46px;
+    line-height: 28px;
+    text-transform: uppercase;
+    &:not(:last-of-type) {
+      margin-right: 30px;
+    }
+    &:hover, &:visited {
+      color: get-color-from-palette('background-magenta');
+    }
+  }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+  .tags-block__tag-element {
+    flex: 0 1 auto;
+  }
+}

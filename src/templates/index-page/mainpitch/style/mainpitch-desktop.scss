@@ -1,0 +1,22 @@
+@import "~bulma/sass/utilities/_all.sass";
+@include desktop {
+    .home{
+        &__mainpitch {
+            padding-top: 14em !important;
+            &__title {
+                margin-bottom: initial;
+                h1 {
+                    font-size: 42px !important;
+                    line-height: 60px !important;
+                }
+            }
+            &__image__container {
+                text-align: right;
+            }
+            &__image{
+                width: 78%;
+            }
+        }
+        
+    }
+}

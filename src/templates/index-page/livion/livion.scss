@@ -1,0 +1,133 @@
+@import '../../../styles/palette.scss';
+.home__livion {
+  position: relative;
+  box-sizing: border-box;
+  background-color: get-color-from-palette('background-primary');
+  &__container {
+    overflow: hidden auto;
+    margin: 0 !important;
+  }
+  &__content {
+    padding: 73.25px 13% 1.5em !important;
+    &__category {
+      color: get-color-from-palette('text-primary');
+      font-family: 'gotham-black';
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 10.06px;
+      line-height: 36px;
+      text-transform: uppercase;
+      margin-bottom: 40px;
+    }
+    &__title {
+      color: get-color-from-palette('link-primary');
+      font-family: 'gotham-bold';
+      font-size: 49px;
+      line-height: 50px;
+      font-weight: bold;
+      letter-spacing: -0.25px;
+    }
+    &__description {
+      color: get-color-from-palette('secondary');
+      font-family: 'gotham-book';
+      font-size: 16px;
+      line-height: 29px;
+      letter-spacing: -0.07px;
+      width: 60%;
+    }
+  }
+  &__images {
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-left: 1.5em !important;
+    z-index: 1;
+    &__monitor {
+      width: 100% !important;
+      &__mobile {
+        display: initial;
+      }
+      &__desktop {
+        position: absolute;
+        right: 0px;
+        width: 50% !important;
+        height: 100% !important;
+        object-fit: contain;
+        object-position: right;
+        display: none;
+      }
+    }
+  }
+  // &__next-background-placeholder {
+  //   position: absolute;
+  //   bottom: 0px;
+  //   width: 100%;
+  //   height: 6em;
+  //   background-color: get-color-from-palette('background-magenta');
+  //   display: none;
+  //   z-index: 0;
+  // }
+}
+
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+  // .home__livion__next-background-placeholder {
+  //   display: initial;
+  // }
+
+  .home__livion__container {
+    height: 800px !important;
+  }
+
+  .home__livion__images {
+    margin-left: inherit !important;
+  }
+
+  .home__livion__images__monitor__mobile {
+    display: none !important;
+  }
+
+  .home__livion__images__monitor__desktop {
+    display: initial !important;
+  }
+
+  .home__livion__content {
+    padding-top: 8em !important;
+    padding-bottom: 8em !important;
+    // margin-left: 14% !important;
+  }
+  .home__livion__content__description{
+    font-size: 12px;
+    width: 85%;
+  }
+}
+
+@include desktop {
+  .home__livion {
+    padding-top: 70px;
+  }
+}
+
+@include widescreen {
+  .home__livion__content__category {
+    font-size: 12px;
+    line-height: 36px;
+    letter-spacing: 16.57px;
+    margin-bottom: 145px;
+  }
+
+  .home__livion__content__title {
+    font-size: 74px;
+    line-height: 68px;
+    letter-spacing: -0.38px;
+    margin-bottom: 35px;
+  }
+
+  .home__livion__content__description {
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: -0.08px;
+    width: 100%;
+  }
+}

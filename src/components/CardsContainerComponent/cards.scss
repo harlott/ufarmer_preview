@@ -1,0 +1,124 @@
+@import '~bulma';
+@import '../../styles/palette.scss';
+
+.card-theme-blue {
+  color: get-color-from-palette('text-primary');
+  background-color: get-color-from-palette('background-blue');
+}
+
+.cardsContainer {
+  padding: 60px 0px !important;
+  width: 100% !important;
+  // &__margined {
+  //   max-width: 1157px !important;
+  //   margin: 0px auto !important;
+  //   padding: 0px 20px !important;
+  // }
+  &__title {
+    font-family: 'gotham-bold';
+    color: get-color-from-palette('text-magenta');
+    font-size: 42px !important;
+    line-height: 42px;
+    letter-spacing: -0.22px;
+    text-align: left;
+    &:hover {
+      color: get-color-from-palette('text-magenta');
+    }
+  }
+  &__placeholder {
+    padding-top: 55px !important;
+    padding-bottom: 55px !important;
+    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    & > {
+      flex: 1 0 auto;
+    }
+  }
+}
+
+.card-component {
+  &:not(:last-of-type) {
+    margin-right: 56.47px;
+  }
+  &:last-of-type {
+    padding-right: 5.628%;
+  }
+  &__container {
+    width: 202.53px !important;
+    &__image {
+      width: 100% !important;
+      height: 190px !important;
+      background-color: get-color-from-palette('background-magenta');
+      margin-bottom: 25px;
+      & > * {
+        height: 100%;
+        object-fit: contain;
+        background-size: contain;
+      }
+    }
+    &__title {
+      font-family: 'gotham-medium';
+      color: get-color-from-palette('white');
+      font-size: 24px !important;
+      line-height: 32px;
+      letter-spacing: 0.09px;
+      text-align: left;
+      margin: 21px 0px 10.5px 0px !important;
+      &:hover {
+        color: get-color-from-palette('white');
+      }
+    }
+    &__description {
+      font-family: 'gotham-light';
+      font-size: 12px !important;
+      line-height: 20px;
+      letter-spacing: 0.03px;
+      text-align: left;
+      margin: 10.5px 0px !important;
+    }
+  }
+}
+
+@include tablet {
+  .card-component {
+    &:not(:last-of-type) {
+      margin-right: 65px;
+    }
+    &__container {
+      width: 455px !important;
+    }
+  }
+
+  .card-component__container__title {
+    font-size: 32px !important;
+    line-height: 36px;
+    letter-spacing: 0.12px;
+    margin: 24px 0px !important;
+  }
+
+  .card-component__container__description {
+    font-size: 18px !important;
+    line-height: 32px;
+    letter-spacing: 0.05px;
+    margin: 24px 0px !important;
+  }
+}
+
+@include desktop {
+  .cardsContainer__title {
+    font-size: 62px !important;
+    line-height: 80px;
+    letter-spacing: 0.17px;
+    margin-bottom: 100px;
+  }
+
+  .card-component__container__image {
+    margin-bottom: 47px;
+    height: 305px !important;
+  }
+}
+

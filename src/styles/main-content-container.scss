@@ -1,0 +1,107 @@
+@import "~bulma";
+
+@import './variables.sass';
+
+.main-content-container{
+    width: auto !important;
+    max-width: 600px;
+    margin: auto auto;
+    .columns {
+        padding: 0px;
+        margin: 0px !important;
+    }
+    .column{
+        padding-left:0px !important;
+        padding-right:0px !important;
+    }
+}
+.main-content-padding{
+    padding-left: $main-horizontal-padding-mobile;
+    padding-right: $main-horizontal-padding-mobile;
+    .no-side-padding{
+        margin-left: -$main-horizontal-padding-mobile !important;
+        margin-right: -$main-horizontal-padding-mobile !important;
+    }
+}
+
+.full-width-component {
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    width: 100%;
+    height: 360px;
+}
+.solution-article-section__body__description > .full-width-component:last-child {
+    margin: initial !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet{
+    .main-content-container{
+        // min-width: 769px;
+        max-width: 850px;
+    }
+    .main-content-padding, .main-content-padding-tablet{
+        padding-left: $main-horizontal-padding-tablet !important;
+        padding-right: $main-horizontal-padding-tablet !important;
+        .no-side-padding {
+            margin-left: -$main-horizontal-padding-tablet !important;
+            margin-right: -$main-horizontal-padding-tablet !important;
+        }
+    }
+    .full-width-component {
+        margin-left: calc(98% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+        height: 480px;
+    }
+    .solution-article-section__body__description > .full-width-component:last-child {
+        margin: initial !important;
+        margin-left: calc(98% - 50vw) !important;
+        margin-right: calc(50% - 50vw) !important;
+    }
+}
+
+@include desktop {
+    .main-content-container{
+        // min-width: 1024px;
+        max-width: 900px;
+        padding-left: $main-horizontal-padding-desktop !important;
+        padding-right: $main-horizontal-padding-desktop !important;
+        .no-side-padding {
+            margin-left: -$main-horizontal-padding-desktop !important;
+            margin-right: -$main-horizontal-padding-desktop !important;
+        }
+    }
+    .full-width-component {
+        height: 720px;
+    }
+}
+
+@include widescreen{
+    .main-content-container{
+        // min-width: 1216px;
+        max-width: 1440px;
+        padding-left: $main-horizontal-padding-wide !important;
+        padding-right: $main-horizontal-padding-wide !important;
+        .no-side-padding {
+            margin-left: -$main-horizontal-padding-wide !important;
+            margin-right: -$main-horizontal-padding-wide !important;
+        }
+    }
+    .full-width-component {
+        height: 1080px;
+    }
+}
+@media only screen and (min-width: $main-container-max-width) {
+    .main-content-container{
+        margin: 0px auto !important;
+        padding-left: $main-horizontal-padding-max !important;
+        padding-right: $main-horizontal-padding-max !important;
+        .no-side-padding {
+            margin-left: -$main-horizontal-padding-max !important;
+            margin-right: -$main-horizontal-padding-max !important;
+        }
+    }
+}

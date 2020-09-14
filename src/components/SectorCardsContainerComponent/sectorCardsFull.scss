@@ -1,0 +1,242 @@
+@import '~bulma';
+@import '../../styles/palette.scss';
+@import '../../styles/variables.scss';
+
+.sector-cards-full-theme-blue {
+  color: get-color-from-palette('text-primary');
+  background-color: get-color-from-palette('background-blue');
+}
+
+.sector-cards-full-theme-grey {
+  color: get-color-from-palette('background-blue');
+  background-color: transparent;
+}
+
+.sector-cards-full-theme-green{
+  color: #ffffff;
+  background: $gradient-right !important;
+  .sector-card-full-component__container__image{
+    background-image: initial !important;
+  }
+}
+
+
+.sector-cards-full-container {
+  &__title {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+    font-family: 'gotham-bold';
+    color: get-color-from-palette('text-magenta');
+    font-size: 42px !important;
+    line-height: 42px;
+    letter-spacing: -0.22px;
+    text-align: left;
+  }
+  &__placeholder {
+    padding: 75px 0px !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    box-sizing: border-box;
+    display: flex !important;
+    &__order-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: flex-start;
+      & > .sector-card-full-component {
+        flex: 1 1 150px;
+        max-width: 150px !important;
+      }
+    }
+    &__order-column {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      & > * {
+        margin-bottom: 125px !important;
+      }
+    }
+    & > {
+      flex: 0 1 auto;
+    }
+  }
+}
+
+.sector-card-full-component {
+  margin-left: 16px !important;
+  margin-right: 16px !important;
+  &__container {
+    position: relative;
+    display: flex !important;
+    &__order-row {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      & > .sector-card-full-component__container__image {
+        margin-right: 58px !important;
+      }
+    }
+    &__order-column {
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      & > .sector-card-full-component__container__image {
+        margin-right: auto !important;
+      }
+    }
+    &__image {
+      z-index: 1;
+      display: block;
+      width: 150px !important;
+      height: 144px !important;
+      background-image: url('../../../static/img/fill-blue.svg');
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 35px !important;
+      text-align: center;
+      &__imageClass {
+        width: 100% !important;
+        height: 100% !important;
+        * {
+          object-fit: contain !important;
+        }
+      }
+    }
+    &__text {
+      flex: 1 0 100%;
+      &__title {
+        position: relative;
+        z-index: 2;
+        font-family: 'gotham-medium';
+        font-size: 25px !important;
+        line-height: 32px;
+        letter-spacing: 0.11px;
+        text-align: left;
+        margin: 18.68px 0px 20px 0px !important;
+      }
+      &__description {
+        position: relative;
+        z-index: 2;
+        font-family: 'gotham-light';
+        font-size: 20px !important;
+        line-height: 27px;
+        letter-spacing: 0.04px;
+        text-align: left;
+        margin: 10.5px 0px !important;
+        width: 100%;
+        max-width: 580px;
+        font-weight: 700;
+        h1 {
+          color: get-color-from-palette("background-blue");
+          font-family: 'gotham-bold';
+          font-size: 38px !important;
+          line-height: 38px !important;
+          letter-spacing: 0.14px !important;
+          margin-bottom: 32px !important;
+        }
+        h2 {
+          color: get-color-from-palette("background-blue");
+          font-family: 'gotham-medium';
+          font-size: 30px;
+          line-height: 40px;
+          letter-spacing: 0.11px;
+          margin: 29px 0px !important;
+        }
+        h3 {
+          color: get-color-from-palette("background-blue");
+          font-family: 'gotham-bold';
+          font-size: 20px;
+          line-height: 27px;
+          letter-spacing: normal;
+          margin: 29px 0px !important;
+        }
+        p {
+          margin-bottom: 37px;
+        }
+        strong {
+          font-family: 'gotham-bold';
+        }
+        em {
+          font-style: italic;
+        }
+        iframe {
+          margin: 24px 0px !important;
+          width: 100% !important;
+        }
+        ul {
+          list-style: initial;
+          padding-left: 25px !important;
+          margin-left: 25px !important;
+          margin-bottom: 42px;
+        }
+        ol {
+          list-style-type: decimal;
+          padding-left: 25px !important;
+          margin-left: 25px !important;
+          margin-bottom: 42px;
+        }
+      }
+      &__link {
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}
+
+@include desktop {
+  .sector-cards-full-container__title {
+    width: 85% !important;
+    font-size: 62px !important;
+    line-height: 80px !important;
+    letter-spacing: 0.17px !important;
+    padding-bottom: 75px !important;
+    padding-top: 230px !important;
+  }
+
+  .sector-card-full-component__container__order-row > .sector-card-full-component__container__text {
+    flex: 1 1 0% !important;
+  }
+
+  // .sector-cards-full-container__placeholder {
+  //   margin: 0px -16% !important;
+  // }
+
+  // .sector-card-full-component {
+  //   width: 243px;
+  // }
+
+  // .sector-card-full-component__container__text__title {
+  //   margin: 0px 0px 25px 0px !important;
+  // }
+
+  // .sector-card-full-component__container__text__description {
+  //   margin: 0px 0px 25px 0px !important;
+  // }
+
+  // .sector-card-full-component__container__text__link {
+  //   margin: 0px !important;
+  // }
+
+  // .sector-cards-full-container__text__title {
+  //   font-size: 62px !important;
+  //   line-height: 80px;
+  //   letter-spacing: 0.17px;
+  // }
+}
+
+@include widescreen {
+  .sector-cards-full-container__title {
+    width: 70% !important;
+  }
+  // .sector-card-full-component {
+  //   width: 371px;
+  // }
+  // .sector-cards-full-container__placeholder {
+  //   margin: 0px -10% !important;
+  // }
+}

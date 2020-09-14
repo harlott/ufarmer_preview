@@ -1,0 +1,24 @@
+@import '../../styles/palette.scss';
+
+.Input {
+  &__type-text {
+    box-sizing: border-box;
+    border: 2px solid get-color-from-palette('background-blue');
+    border-radius: 75px;
+    width: 100%;
+    padding: 11px 25px !important;
+    color: get-color-from-palette('background-blue');
+    font-family: 'gotham-book';
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: -0.16px;
+  }
+}
+
+@import '~bulma';
+
+@include desktop {
+  .Input__type-text {
+    padding: 16px 36.5px !important;
+  }
+}

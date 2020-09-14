@@ -1,0 +1,30 @@
+@import '~bulma';
+@import '../../styles/palette.scss';
+
+.about-us {
+  position: relative;
+  padding: 45px 0px !important;
+  &__timeline-image {
+    padding: 0px !important;
+    padding-bottom: 60px !important;
+    display: block;
+    width: 100%;
+    height: auto;
+    min-height: 246px !important;
+    & > * {
+      width: auto;
+      height: auto;
+      max-width: initial;
+      max-height: initial;
+    }
+  }
+}
+
+@include tablet {
+  .about-us {
+    padding: 150px 0px 413px 0px !important;
+    &__timeline-image {
+      padding-bottom: 125px !important;
+    }
+  }
+}

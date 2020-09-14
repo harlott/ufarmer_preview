@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+   sodipodi:docname="read-more-arrow-white.svg"
+   id="svg11"
+   version="1.1"
+   viewBox="0 0 69 25"
+   height="25px"
+   width="69px">
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs15" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg11"
+     inkscape:window-maximized="1"
+     inkscape:window-y="27"
+     inkscape:window-x="0"
+     inkscape:cy="12.840954"
+     inkscape:cx="37.390466"
+     inkscape:zoom="18.217391"
+     showgrid="false"
+     id="namedview13"
+     inkscape:window-height="988"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <title
+     id="title2">8A7F15F2-67BB-4EB4-97EB-BFC6989C4D6B</title>
+  <g
+     style="fill:#ffffff"
+     fill-rule="evenodd"
+     fill="none"
+     stroke-width="1"
+     stroke="none"
+     id="SitoCWS">
+    <g
+       style="fill:#ffffff"
+       fill="#0D1FCF"
+       transform="translate(-416.000000, -1848.000000)"
+       id="Home">
+      <g
+         style="fill:#ffffff"
+         transform="translate(0.000000, 768.000000)"
+         id="digital_transformation">
+        <g
+           style="fill:#ffffff"
+           transform="translate(173.000000, 669.000000)"
+           id="Customer-Engagement">
+          <g
+             style="fill:#ffffff"
+             transform="translate(62.000000, 409.000000)"
+             id="Group-19">
+            <g
+               style="fill:#ffffff"
+               transform="translate(215.500000, 14.500000) rotate(90.000000) translate(-215.500000, -14.500000) translate(203.000000, -20.000000)"
+               id="arrow">
+              <path
+                 style="fill:#ffffff"
+                 id="Outline"
+                 d="M11.5815514,3.36601714 L11.5815514,67.5222171 C11.5815514,68.0663314 12.0231514,68.5079314 12.5672657,68.5079314 C13.11138,68.5079314 13.55298,68.0663314 13.55298,67.5222171 L13.55298,3.36601714 L23.0237229,12.8347886 C23.4081514,13.2192171 24.0311229,13.2192171 24.4175229,12.8347886 C24.8019514,12.45036 24.8019514,11.8254171 24.4175229,11.4409886 L13.2651514,0.288617143 C12.8807229,-0.0958114286 12.25578,-0.0958114286 11.8713514,0.288617143 L0.71898,11.4409886 C0.334551429,11.8254171 0.334551429,12.45036 0.71898,12.8347886 C1.10340857,13.2192171 1.72835143,13.2192171 2.11278,12.8347886 L11.5815514,3.36601714 Z" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

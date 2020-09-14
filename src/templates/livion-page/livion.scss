@@ -1,0 +1,131 @@
+@import "../../styles/palette.scss";
+
+.livion{
+  &__top-container{
+    background: get-color-from-palette("background-primary-gradient-livion");
+    .main-top-section{
+      background: transparent;
+    }
+    &__img-container{
+      background: transparent;
+      width:100%;
+      margin: 0px auto;
+      padding-bottom: 2%;
+    }
+    &__demo-button {
+      width: 90%;
+      padding: 1em;
+      text-align: center;
+      margin: 8% auto;
+    }
+    &__bottom{
+      padding-top: 8%;
+      background: transparent;
+    }
+  }
+  &__sectors-container{
+    background-color: get-color-from-palette('background-blue');
+  }
+  &__touch-economy{
+    padding-top: 78px;
+    background-color: get-color-from-palette('border-primary');
+    .solution-article-section__body__title{
+      font-family: 'gotham-bold';
+      font-size: 41px !important;
+      line-height: 41px;
+      letter-spacing: 0.16px;
+      text-align: left;
+    }
+    .solution-article-section__body__description {
+      font-family: 'gotham-light';
+      font-size: 16px !important;
+      line-height: 27px;
+      letter-spacing: 0.04px;
+      text-align: left;
+      padding-bottom: 45px;
+    }
+    .sector-cards-container{
+      padding-top: 0px !important;
+      .sector-cards-container__placeholder{
+        padding-top: 0px !important;
+      }
+      .sector-card-component__container__image{
+        margin: initial;
+        padding-left: 0px !important;
+        text-align: left;
+        background-position: initial;
+      }
+      .sector-card-component__container__link{
+        display: none;
+      }
+      .sector-card-component{
+        padding-bottom: 45px !important;
+      }
+    }
+  }
+}
+.livion__sectors-container {
+  .solution-article-section__body__title {
+    font-size: 30px !important;
+    line-height: 40px !important;
+  }
+}
+.livion__touch-economy {
+  .solution-article-section__body__title {
+    font-size: 74px !important;
+    line-height: 80px !important;
+  }
+}
+@import "~bulma/sass/utilities/_all.sass";
+@include tablet{
+  .livion__touch-economy__cards-container{
+    .sector-cards-container.grey{
+      .sector-card-component__container__description{
+        width: 70%;
+      }
+    }
+  }
+  .livion__sectors-container__first-column {
+    margin-right: 15% !important;
+  }
+}
+@include desktop{
+  .livion__top-container {
+    .main-top-section{
+      padding-top: 285px !important;
+      &__title {
+        margin-bottom: 150px !important;
+        & > h1 {
+          font-size: 74px !important;
+          line-height: 80px !important;
+        }
+      }
+    }
+  }
+  .livion__touch-economy {
+    padding-top: 166px;
+    .solution-article-section__body__title {
+      font-size: 74px !important;
+      line-height: 80px !important;
+    }
+    &__cards-container{
+      .sector-cards-container.grey{
+        .sector-card-component{
+          width: 37% !important;
+        }
+      }
+    }
+  }
+}
+
+@include widescreen {
+  .livion__top-container {
+    .main-top-section{
+      padding-top: 325px !important;
+      &__title {
+        margin-bottom: 200px !important;
+      }
+    }
+  }
+}
+

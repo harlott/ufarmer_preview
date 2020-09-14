@@ -1,0 +1,41 @@
+.gradientButton {
+  &__button {
+    cursor: pointer;
+    border: 0;
+    padding: 2px;
+    border-radius: 68.53px;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    &__disabled {
+      cursor: not-allowed;
+    }
+    &__innerElement {
+      display: inline-block;
+      font-family: 'gotham-book';
+      &:not(.center__placement) {
+        padding: 10px 40px 13px 40px;
+      }
+      &.center__placement {
+        padding: 10px 40px;
+      }
+      border-radius: 68.53px;
+      font-size: 22px;
+      line-height: 26px;
+      letter-spacing: -0.16px;
+    }
+  }
+}
+
+@import "~bulma";
+
+@include tablet {
+  .gradientButton__button__innerElement {
+    &.center__placement {
+      padding: 26px 75px;
+    }
+    &:not(.center__placement) {
+      padding: 33px 75px 19px 75px;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "primaryNavs": [
+    {
+      "name": "Digital Transformation",
+      "link": "/digital-transformation",
+      "navbar": true,
+      "subItems": [
+        {
+          "name": "Customer Engagement",
+          "link": "/digital-transformation/customer-engagement"
+        },
+        {
+          "name": "Employee Empowerment",
+          "link": "/digital-transformation/employee-empowerment"
+        },
+        {
+          "name": "Operation Optimization",
+          "link": "/digital-transformation/operation-optimization"
+        },
+        {
+          "name": "Business Transformation",
+          "link": "/digital-transformation/business-transformation"
+        }
+      ]
+    },
+    {
+      "name": "Competence center",
+      "link": "/competence-center",
+      "navbar": false,
+      "subItems": []
+    },
+    {
+      "name": "Risorse",
+      "link": "/risorse",
+      "navbar": true,
+      "subItems": []
+    },
+    {
+      "name": "Lavora con noi",
+      "link": "/lavora-con-noi",
+      "navbar": true,
+      "subItems": []
+    }
+  ],
+  "secondaryNav": {
+    "aboutLinks": [
+      {
+        "name": "Chi siamo",
+        "link": "/chi-siamo"
+      },
+      {
+        "name": "Stampa",
+        "link": "/press"
+      },
+      {
+        "name": "Livion",
+        "link": "/livion"
+      },
+      {
+        "name": "Contatti",
+        "link": "/contatti"
+      }
+    ],
+    "socialLinks": [
+      {
+        "name": "linkedin",
+        "link": "https://www.linkedin.com/company/cws-srl/"
+      },
+      {
+        "name": "facebook",
+        "link": "https://www.facebook.com/cwssrl/"
+      },
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/cwsdigitalsolutions/"
+      },
+      {
+        "name": "twitter",
+        "link": "https://twitter.com/CWS_srl/"
+      }
+    ],
+    "legalLinks": [
+      {
+        "name": "Privacy policy",
+        "link": "/info/privacy-policy"
+      },
+      {
+        "name": "Cookie policy",
+        "link": "/info/cookie-policy"
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "name": "Certificato di qualità",
+      "link": "/info/qualita"
+    }
+  ],
+  "languagesLinks": [
+    {
+      "name": "ITA",
+      "link": "/config/lang/ita"
+    },
+    {
+      "name": "ENG",
+      "link": "/config/lang/eng"
+    }
+  ]
+}

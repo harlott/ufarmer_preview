@@ -1,0 +1,203 @@
+@import '../../../styles/palette.scss';
+
+.case-study-expanded {
+  display: none;
+  background-color: get-color-from-palette('background-blue');
+  padding: 165px 0px !important;
+  overflow: hidden;
+  &__container {
+    height: 687px !important;
+    width: 100% !important;
+    &__title {
+      display: block;
+      margin: 0px !important;
+      padding: 0px !important;
+      text-transform: uppercase;
+      color: get-color-from-palette('white');
+      font-family: 'gotham-black';
+      font-size: 12px;
+      line-height: 36px;
+      letter-spacing: 12px;
+    }
+    &__carousel {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      &__text-placeholder {
+        margin-top: 128px !important;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 308px;
+        overflow: hidden;
+        &__text-block {
+          position: absolute;
+          top: 0px !important;
+          left: 0px;
+          width: 100% !important;
+          height: 100% !important;
+          padding-right: 25px;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: nowrap;
+          justify-content: flex-start;
+          align-items: stretch;
+          &__year {
+            color: get-color-from-palette('background-primary');
+            font-family: 'gotham-bold';
+            font-size: 26px;
+            line-height: 28px;
+            letter-spacing: -0.58px;
+            margin: 0px !important;
+            margin-bottom: 20px !important;
+            padding-left: 22px !important;
+          }
+          &__title {
+            color: get-color-from-palette('white');
+            font-family: 'gotham-bold';
+            font-size: 70px;
+            line-height: 72px;
+            letter-spacing: -0.36px;
+            max-height: 215px;
+            overflow: hidden;
+          }
+          &__place {
+            margin-top: auto;
+            color: get-color-from-palette('background-primary');
+            font-family: 'gotham-book';
+            font-size: 34px;
+            line-height: 36px;
+            letter-spacing: -0.76px;
+            padding-left: 22px !important;
+          }
+          &.execute-transition {
+            transition: left 1s ease-in-out;
+          }
+          &.previous-block {
+            left: -100%;
+          }
+          &.next-block {
+            left: 100%;
+          }
+          &.current-becomes-next {
+            left: 100% !important;
+          }
+          &.current-becomes-prev {
+            left: -100% !important;
+          }
+          &.prev-becomes-current {
+            left: 0% !important;
+          }
+          &.next-becomes-current {
+            left: 0% !important;
+          }
+        }
+      }
+      &__image-placeholder {
+        z-index: 1;
+        position: absolute;
+        top: 0px;
+        left: 35%;
+        width: 110%;
+        height: 700px;
+        background-color: get-color-from-palette('background-primary');
+        overflow: hidden;
+        &__image-block {
+          position: absolute;
+          top: 0px !important;
+          left: 0px;
+          width: 100% !important;
+          height: 100% !important;
+          object-fit: cover;
+          &.execute-transition {
+            transition: left 1s ease-in-out;
+          }
+          &.previous-image {
+            left: -100%;
+          }
+          &.next-image {
+            left: 100%;
+          }
+          &.current-becomes-next {
+            left: 100% !important;
+          }
+          &.current-becomes-prev {
+            left: -100% !important;
+          }
+          &.prev-becomes-current {
+            left: 0% !important;
+          }
+          &.next-becomes-current {
+            left: 0% !important;
+          }
+          
+        }
+      }
+      &__scroll-placeholder {
+        z-index: 2;
+        margin: 0px !important;
+        margin-top: 95px !important;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        &__arrow {
+          width: 80px !important;
+          height: 30px !important;
+          position: relative;
+          display: block;
+          cursor: pointer;
+          & > img {
+            transition: transform 0.2s ease-in-out;
+            object-fit: contain;
+          }
+          &:hover {
+            & > img {
+              &.arrow-left {
+                transform: translateX(-20px);
+              }
+              &.arrow-right {
+                transform: translateX(20px);
+              }
+            }
+          }
+        }
+        &__indicator {
+          color: get-color-from-palette('white');
+          font-family: 'gotham-bold';
+          font-size: 18px;
+          line-height: 18px;
+          letter-spacing: -0.4px;
+          margin: 0px 25px !important;
+        }
+      }
+    }
+  }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+  .case-study-expanded {
+    display: block;
+  }
+}
+
+@include desktop {
+  .case-study-expanded__container__carousel__text-placeholder {
+    width: 70% !important;
+  }
+}
+
+@include widescreen {
+  .case-study-expanded__container__carousel__text-placeholder {
+    width: 60% !important;
+  }
+}

@@ -1,0 +1,129 @@
+@import '../../styles/palette.scss';
+
+.paginated-links-theme-white {
+  .paginated-links__links-container__link-block__link-description__link-title {
+    color: get-color-from-palette('background-blue') !important;
+  }
+  .paginated-links__links-container__link-block__link-description__link-text {
+    color: get-color-from-palette('text-gray') !important;
+  }
+  .paginated-links__links-container__link-block__link-arrow__arrow-block {
+    background-color: get-color-from-palette('text-gray') !important;
+  }
+}
+
+.paginated-links {
+  &__links-container {
+    width: 100% !important;
+    height: 100% !important;
+    &__link-block {
+      margin-bottom: 85px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      &__link-description {
+        order: 0;
+        flex: 1 1 auto;
+        &__link-title {
+          font-family: 'gotham-bold';
+          font-size: 30px;
+          line-height: 34px;
+          letter-spacing: 0.08px;
+          margin-bottom: 12px !important;
+        }
+        &__link-text {
+          font-family: 'gotham-book';
+          font-size: 18px;
+          letter-spacing: 0.05px;
+          line-height: 32px;
+        }
+      }
+      &__link-arrow {
+        order: 1;
+        flex: 0 1 auto;
+        &__arrow-block {
+          display: block;
+          margin-top: 35px !important;
+          width: 52px !important;
+          height: 18px !important;
+          mask-image: url('../../../static/img/read-more-arrow.svg');
+          mask-repeat: no-repeat;
+          mask-size: contain;
+          mask-position: center;
+        }
+      }
+    }
+  }
+  &__paginator-container {
+    margin: 160px 0px !important;
+    width: auto;
+    &__paginator-block {
+      width: auto;
+      min-height: 50px !important;
+      padding: 10px!important;
+      border-radius: 24.5px;
+      background: linear-gradient(90deg, #0D1FCF 0%, #F00381 100%);
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      &__paginator-number {
+        cursor: pointer;
+        color: get-color-from-palette('white');
+        font-family: 'gotham-book';
+        font-size: 14px;
+        line-height: 14px;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:not(:first-of-type) {
+          margin-left: 5px;
+        }
+        &:not(:last-of-type) {
+          margin-right: 5px;
+        }
+        &.current {
+          border: 1px solid get-color-from-palette('white');
+          border-radius: 30px;
+        }
+      }
+    }
+  }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+}
+
+@include desktop {
+  .paginated-links__links-container__link-block {
+    margin-bottom: 40px !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 45px !important;
+    border-bottom: 1px solid get-color-from-palette('text-gray');
+    &__link-arrow  {
+      margin-left: 130px !important;
+    }
+  }
+
+  .paginated-links__paginator-container__paginator-block {
+    padding: 10px 110px !important;
+  }
+}
+
+@include widescreen {
+  .paginated-links__links-container__link-block__link-arrow  {
+    margin-left: 260px !important;
+  }
+}
+
+

@@ -1,0 +1,149 @@
+# Docker
+# Build and push an image to Azure Container Registry
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+    - release/*
+    - develop
+    exclude:
+    - b/*
+# pr:
+#   branches:
+#     include:
+#     - master
+#     - release/*
+#     - develop
+#     exclude:
+#     - b/*
+#     - f/*
+
+resources:
+- repo: self
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  # Container registry service connection established during pipeline creation
+  dockerRegistryServiceConnection: '0e7e1edf-c5ac-4afa-8a6c-725344dbe83e'
+  dockerRegistryServiceConnectionTest: 'de09c754-9db2-4451-bdd5-de7f6625aca4'
+  imageRepository: 'cwssitegatsby'
+  containerRegistryTest: 'cwssite.azurecr.io'
+  containerRegistry: 'cwsiotmobile.azurecr.io'
+  dockerfilePath: '**/Dockerfile'
+  tag: '$(Build.BuildId)'
+  npm_config_cache: $(Pipeline.Workspace)/.npm
+  
+  # Agent VM image name
+  vmImageName: 'ubuntu-latest'
+
+steps:
+  - task: Cache@2
+    inputs:
+      key: 'npm | "$(Agent.OS)" | package-lock.json'
+      restoreKeys: |
+        npm | "$(Agent.OS)"
+      path: $(npm_config_cache)
+    displayName: Cache npm
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '12.x'
+    displayName: 'Install Node.js'
+
+    #  - script: |
+    #  echo $(env)
+    #  echo $(tag)
+    #displayName: Check variables
+
+  - script: |
+      npm ci
+    displayName: 'npm install'
+
+  - script: |
+      npm run build
+    displayName: 'npm build'
+
+  - task: CopyFiles@2
+    inputs:
+      Contents: 'public/**'
+      TargetFolder: 'Build.StagingDirectory'
+      OverWrite: true
+    displayName: 'Copy archives to artifacts staging directory'
+
+  - task: Docker@2
+    displayName: Docker Build
+    inputs:
+      command: build
+      repository: $(imageRepository)
+      dockerfile: $(dockerfilePath)
+      containerRegistry: $(dockerRegistryServiceConnectionTest)
+      tags: $(tag)
+
+  - task: Docker@2
+    displayName: Docker Push
+    inputs:
+      command: push
+      repository: $(imageRepository)
+      dockerfile: $(dockerfilePath)
+      containerRegistry: $(dockerRegistryServiceConnectionTest)
+      tags: $(tag)
+
+
+  - task: Docker@2
+    displayName: Docker build and push
+    inputs:
+      containerRegistry: 'cwsiotmobile'
+      repository: 'cwssitegatsby'
+      command: 'buildAndPush'
+      Dockerfile: '**/Dockerfile'
+      tags: |
+        $(tag)
+        latest
+
+  - task: AzureWebAppContainer@1
+    inputs:
+      azureSubscription: 'Visual Studio Enterprise - MPN(eb0ee66b-12f8-4708-a695-614dbd45a127)'
+      appName: 'cwssite'
+      containers: $(containerRegistryTest)/$(imageRepository):$(tag)
+
+  - task: AzureWebAppContainer@1
+    inputs:
+      azureSubscription: 'ict-prod'
+      appName: 'ict-prod-webapp-sitocws'
+      containers: $(containerRegistry)/$(imageRepository):$(tag)
+
+#### Use publish and swap -> do not enable 
+  # - task: AzureWebAppContainer@1
+  #   inputs:
+  #     azureSubscription: 'ict-prod'
+  #     appName: 'ict-prod-webapp-sitocws'
+  #     deployToSlotOrASE: true
+  #     resourceGroupName: 'ict-prod'
+  #     slotName: 'release'
+  #     containers: $(containerRegistry)/$(imageRepository):$(tag)
+
+  # - task: AzureAppServiceManage@0
+  #   inputs:
+  #     azureSubscription: 'ict-prod'
+  #     Action: 'Swap Slots'
+  #     WebAppName: 'ict-prod-webapp-sitocws'
+  #     ResourceGroupName: 'ict-prod'
+  #     SourceSlot: 'release'
+
+  # - task: AzureRmWebAppDeployment@4
+  #   inputs:
+  #     ConnectionType: 'AzureRM'
+  #     azureSubscription: 'ict-prod'
+  #     appType: 'webAppContainer'
+  #     WebAppName: 'ict-prod-webapp-sitocws'
+  #     deployToSlotOrASE: true
+  #     ResourceGroupName: 'ict-prod'
+  #     SlotName: 'release'
+  #     DockerNamespace: '$(containerRegistry)'
+  #     DockerRepository: '$(imageRepository)'
+  #     DockerImageTag: '$(tag)'

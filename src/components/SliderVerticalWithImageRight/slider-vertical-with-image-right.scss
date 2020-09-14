@@ -1,0 +1,21 @@
+@import '../../styles/palette.scss';
+
+.slider-vertical-container{
+  background: get-color-from-palette('background-blue');
+  color: get-color-from-palette('text-primary');
+  &__item{
+    &__content{
+      display: block;
+      width: 60%;
+      &__title{
+        font-size: 20px;
+      }
+      &__description{
+        font-size: 20px;
+      }
+    }
+    &__image{
+      width: 35%;
+    }
+  }
+}

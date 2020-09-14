@@ -1,0 +1,24 @@
+@import "~bulma/sass/utilities/_all.sass";
+@include widescreen {
+    .home{
+        &__mainpitch {
+            height: 100vh;
+            padding-top: 14em !important;
+            &__title {
+                margin-bottom: initial;
+                h1 {
+                    font-size: 62px !important;
+                    letter-spacing: -1.38px;
+                    line-height: 83px !important;
+                }
+            }
+            &__image__container {
+                text-align: right;
+            }
+            &__image{
+                width: 68%;
+            }
+        }
+        
+    }
+}

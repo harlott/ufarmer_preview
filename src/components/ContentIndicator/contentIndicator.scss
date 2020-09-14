@@ -1,0 +1,40 @@
+@import '../../styles/palette.scss';
+
+@keyframes bouncingDown {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -15px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.ContentIndicator {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  &__arrowContainer {
+    display: inline-block;
+    width: auto;
+    height: 25px;
+    position: relative;
+    animation: bouncingDown 2s ease-out infinite;
+    &__arrowPiece {
+      position: absolute;
+      bottom: 0px;
+      display: block;
+      content: '';
+      width: 2px;
+      background-color: get-color-from-palette('background-primary');
+      &.pieceOne {
+        height: 25px;
+      }
+    }
+  }
+}

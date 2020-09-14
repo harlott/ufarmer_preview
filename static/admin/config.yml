@@ -1,0 +1,657 @@
+backend:
+  name: github
+  branch: develop
+  repo: cwssrl/cws_site # change this to your repo
+  base_url: https://cws-site-oauth.azurewebsites.net/ # change this to your OAuth server
+  publish_mode: editorial_workflow
+media_folder: /static/img
+public_folder: /img
+
+collections:
+  - name: "blog"
+    label: "Resources (Italian)"
+    label_singular: "Resource Italian"
+    folder: "data/blog/it"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sub Title", name: "subtitle", widget: "string", required: false, default: ""}
+      - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
+      - {label: "Featured Image", name: "featuredimage", widget: "image", required: false}
+      - {label: "Quoted", name: "quoted", widget: "markdown", required: false}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
+      - {label: "Blocks", name: "blocks", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Image", name: "image", widget: "image", required: false}, {label: "File Download", name: "filedownload", widget: file, required: false}, {label: "Quoted", name: "quoted", widget: "markdown", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Form Id", name: formId, widget: "string", required: false, default: null}
+      - {label: "Form Label", name: "formLabel", widget: string, required: false, default: ""}
+      - {label: "Author", name: "author", widget: "relation", collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"], required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+
+  - name: "blogEN"
+    label: "Resources (English)"
+    label_singular: "Resource English"
+    folder: "data/blog/en"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sub Title", name: "subtitle", widget: "string", required: false, default: ""}
+      - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
+      - {label: "Featured Image", name: "featuredimage", widget: "image", required: false}
+      - {label: "Quoted", name: "quoted", widget: "markdown", required: false}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
+      - {label: "Blocks", name: "blocks", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Image", name: "image", widget: "image", required: false}, {label: "File Download", name: "filedownload", widget: file, required: false, default: ""}, {label: "Quoted", name: "quoted", widget: "markdown", required: false, default: ""}]}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Form Id", name: formId, widget: "string", required: false, default: null}
+      - {label: "Form Label", name: "formLabel", widget: string, required: false, default: ""}
+      - {label: "Author", name: "author", widget: "relation", collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"], required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - {label: "Parent Reference", name: "parentReference", widget: "relation", collection: "blog", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+
+  - name: "digitalTransformation"
+    label: "Digital Transformation (Italian)"
+    label_singular: "Digital Transformation Italian"
+    folder: "data/pages/it/digital-transformation"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "digital-transformation-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null",collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "CTA", name: "cta", widget: "object", required: false, fields: [{label: "Label", name: "label", widget: "string"}, {label: "Link", name: "link", widget: "string"}]}
+      - {label: "Solution", name: "solution", widget: "object", required: false, fields: [{label: "Intro", name: "intro", widget: "string", required: false}, {label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
+      - {label: "Case Study Related Categories Reference", name: "relatedCategoriesReference", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Phases Image", name: "phasesimage", widget: image, required: false}
+      - {label: "Areas", name: "areas", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Link", name: "link", widget: "string", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Author", name: "author", widget: "relation", required: false, collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+  - name: "digitalTransformationEN"
+    label: "Digital Tranformation (English)"
+    label_singular: "Digital Tranformation English"
+    folder: "data/pages/en/digital-transformation"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "digital-transformation-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null",collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "CTA", name: "cta", widget: "object", required: false, fields: [{label: "Label", name: "label", widget: "string"}, {label: "Link", name: "link", widget: "string"}]}
+      - {label: "Solution", name: "solution", widget: "object", required: false, fields: [{label: "Intro", name: "intro", widget: "string", required: false}, {label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
+      - {label: "Case Study Related Categories Reference", name: "relatedCategoriesReference", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Phases Image", name: "phasesimage", widget: image, required: false}
+      - {label: "Areas", name: "areas", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Link", name: "link", widget: "string", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Author", name: "author", widget: "relation", required: false, collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - {label: "Parent Reference", name: "parentReference", widget: "relation", required: false, collection: "digitalTransformation", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+
+  - name: "competenceCenter"
+    label: "Competence Center (Italian)"
+    label_singular: "Competence Center Italian"
+    folder: "data/pages/it/competence-center"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "competence-single-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null",collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Case Study Related Categories Reference", name: "relatedCategoriesReference", widget: "relation", required: false, default: "null",collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
+      - {label: "Blocks", name: "blocks", widget: "list", required: false, fields: [{label: "Label", name: "label", widget: "string", required: false}, {label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+      - {label: "Areas Title", name: "areastitle", widget: "string", required: false}
+      - {label: "Areas", name: "areas", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Link", name: "link", widget: "string", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Author", name: "author", widget: "relation", required: false, collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+  - name: "competenceCenterEN"
+    label: "Competence Center (English)"
+    label_singular: "Competence Center English"
+    folder: "data/pages/en/competence-center"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "competence-single-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Case Study Related Categories Reference", name: "relatedCategoriesReference", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
+      - {label: "Blocks", name: "blocks", widget: "list", required: false, fields: [{label: "Label", name: "label", widget: "string", required: false}, {label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+      - {label: "Areas Title", name: "areastitle", widget: "string", required: false}
+      - {label: "Areas", name: "areas", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Link", name: "link", widget: "string", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Author", name: "author", widget: "relation", required: false, collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - {label: "Parent Reference", name: "parentReference", widget: "relation", collection: "competenceCenter", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+
+  - name: "caseHistory"
+    label: "Case Studies (Italian)"
+    label_singular: "Case Study Italian"
+    folder: "data/pages/it/case-study"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "case-study-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Preview Title", name: "previewtitle", widget: "string", required: false, default: ""}
+      - {label: "Featured Case", name: "featuredcase", widget: "boolean", required: false}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
+      - {label: "Customer", name: "customer", widget: "string", required: false}
+      - {label: "Place", name: "place", widget: "string", required: false}
+      - {label: "Year", name: "year", widget: "string", required: false}
+      - {label: "Expertise", name: "expertise", widget: "markdown", required: false}
+      - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: false}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Competence Center Category Reference", name: "competenceCenterCategoryReference", widget: "relation", required: false, default: ["null"], multiple: true, collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{slug}}"]}
+      - {label: "Digital Transformation Category Reference", name: "digitalTransformationCategoryReference", widget: "relation", required: false, default: ["null"], multiple: true, collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{slug}}"]}
+      - {label: "Description", name: "description", widget: "markdown", required: false}
+      - {label: "Sections", name: "sections", widget: "list", required: false, fields: [{label: "Intro", name: "intro", widget: "string", required: false, default: ""}, {label: "Title", name: "title", widget: "string", required: false, default: ""}, {label: "Description", name: "description", widget: "markdown", required: false, default: ""}]}
+      - {label: "Image Gallery", name: "imageGallery", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "string", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Testimonials", name: "testimonials", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "string", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Partners", name: "partners", widget: "object", required: false, default: null,fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+      - {label: "Results", name: "results", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - {label: "Author", name: "author", widget: "relation", required: false, collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+  - name: "caseHistoryEN"
+    label: "Case Studies (English)"
+    label_singular: "Case Study English"
+    folder: "data/pages/en/case-study"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "case-study-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Preview Title", name: "previewtitle", widget: "string", required: false, default: ""}
+      - {label: "Featured Case", name: "featuredcase", widget: "boolean", required: false}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
+      - {label: "Customer", name: "customer", widget: "string", required: false}
+      - {label: "Place", name: "place", widget: "string", required: false}
+      - {label: "Year", name: "year", widget: "string", required: false}
+      - {label: "Expertise", name: "expertise", widget: "markdown", required: false}
+      - {label: "Link", name: "link", widget: "string", required: false}
+      - {label: "Publish Date", name: "date", widget: "datetime", required: false}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Competence Center Category Reference", name: "competenceCenterCategoryReference", widget: "relation", required: false, default: "null", multiple: true, collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{slug}}"]}
+      - {label: "Digital Transformation Category Reference", name: "digitalTransformationCategoryReference", widget: "relation", required: false, default: "null", multiple: true, collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{slug}}"]}
+      - {label: "Description", name: "description", widget: "markdown", required: false}
+      - {label: "Sections", name: "sections", widget: "list", required: false, fields: [{label: "Intro", name: "intro", widget: "string", required: false}, {label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+      - {label: "Image Gallery", name: "imageGallery", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "string"}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Testimonials", name: "testimonials", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "string"}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Partners", name: "partners", widget: "object", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+      - {label: "Results", name: "results", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Author", name: "author", widget: "relation", required: false, collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - {label: "Parent Reference", name: "parentReference", widget: "relation", collection: "caseHistory", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+
+  - name: "event"
+    label: "Events (Italian)"
+    label_singular: "Event Italian"
+    folder: "data/pages/it/evento"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
+      - {label: "Event Date", name: "eventdate", widget: date}
+      - {label: "Place", name: "place", widget: "string"}
+      - {label: "Costs", name: "costs", widget: "string"}
+      - {label: "Sub Title", name: "subtitle", widget: "string", required: false, default: ""}
+      - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
+      - {label: "Program", name: "program", widget: "object", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Description Column", name: "descriptioncolumn", widget: "markdown"}]}
+      - {label: "Form Texts", name: "formtexts", widget: "object", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Button", name: "button", widget: "string"}]}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Author", name: "author", widget: "relation", required: false, collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+  - name: "eventEN"
+    label: "Events (English)"
+    label_singular: "Event English"
+    folder: "data/pages/en/event"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "relation", required: false, default: "null", collection: "categories", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
+      - {label: "Event Date", name: "eventdate", widget: date}
+      - {label: "Place", name: "place", widget: "string"}
+      - {label: "Costs", name: "costs", widget: "string"}
+      - {label: "Sub Title", name: "subtitle", widget: "string", required: false, default: ""}
+      - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
+      - {label: "Program", name: "program", widget: "object", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Description Column", name: "descriptioncolumn", widget: "markdown"}]}
+      - {label: "Form Texts", name: "formtexts", widget: "object", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Button", name: "button", widget: "string"}]}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Tags", name: "tags", widget: "list", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - {label: "Author", name: "author", widget: "relation", required: false, collection: "authors", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}
+
+  - name: "categories"
+    label: "Categories"
+    label_singular: "Category"
+    folder: "data/categories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "title", widget: "string"}
+      - {label: "Lang", name: "lang", widget: "select", options: ["it", "en"], default: "it"}
+
+  - name: "authors"
+    label: "Authors"
+    label_singular: "Author"
+    folder: "data/authors"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Name", name: "title", widget: "string"}
+
+  - name: "statics"
+    label: "Info (Italian)"
+    label_singular: "Info Italian"
+    folder: "data/pages/it/info"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "static-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sub Title", name: "subtitle", widget: "string", required: false, default: ""}
+      - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
+      - {label: "Featured Image", name: "featuredimage", widget: "image", required: false}
+      - {label: "Quoted", name: "quoted", widget: "markdown", required: false}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
+      - {label: "File Download", name: "filedownload", widget: file, required: false}
+      - {label: "Blocks", name: "blocks", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Image", name: "image", widget: "image", required: false}, {label: "File Download", name: "filedownload", widget: file, required: false}, {label: "Quoted", name: "quoted", widget: "markdown", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+
+  - name: "staticsEN"
+    label: "Info (English)"
+    label_singular: "Info English"
+    folder: "data/pages/en/info"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "static-page"}
+      - {label: "Page Title", name: pageTitle, widget: string}
+      - {label: "Meta Description", name: metaDescription, widget: string}
+      - {label: "Meta Keywords", name: metaKeywords, widget: string}
+      - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Sub Title", name: "subtitle", widget: "string", required: false, default: ""}
+      - {label: "Description", name: "description", widget: "markdown", required: false, default: ""}
+      - {label: "Featured Image", name: "featuredimage", widget: "image", required: false}
+      - {label: "Quoted", name: "quoted", widget: "markdown", required: false}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean", required: false}
+      - {label: "File Download", name: "filedownload", widget: file, required: false}
+      - {label: "Blocks", name: "blocks", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Image", name: "image", widget: "image", required: false}, {label: "File Download", name: "filedownload", widget: file, required: false}, {label: "Quoted", name: "quoted", widget: "markdown", required: false}]}
+      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Form Id", name: formId, widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown", required: false}
+      - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "data/pages/it/index.md"
+        label: "Home Page (Italian)"
+        name: "index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Main Pitch", name: mainpitch, widget: object, required: false, fields: [{label: Text, name: text, widget: markdown}, {label: "Image Description", name: imageDescription, widget: string}, {label: Image, name: image, widget: image}]}
+          - {label: "Main Sections", name: mainSections, widget: object, required: false, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: string}, {label: "Main Blocks", name: mainBlocks, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: string}, {label: Image, name: image, widget: image}, {label: "Image Description", name: imageDescription, widget: text}, {label: "Url", name: url, widget: text}]}]}
+          - {label: "Livion", name: livion, widget: object, required: false, fields: [{label: Title, name: title, widget: string}, {label: "Title Label", name: titleLabel, widget: string}, {label: Description, name: description, widget: markdown}, {label: "Link", name: link, widget: string}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - file: "data/pages/en/index.md"
+        label: "Home Page (English)"
+        name: "indexEN"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Main Pitch", name: mainpitch, widget: object, required: false, fields: [{label: Text, name: text, widget: markdown}, {label: "Image Description", name: imageDescription, widget: string}, {label: Image, name: image, widget: image}]}
+          - {label: "Main Sections", name: mainSections, widget: object, required: false, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: string}, {label: "Main Blocks", name: mainBlocks, widget: list, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: string}, {label: Image, name: image, widget: image}, {label: "Image Description", name: imageDescription, widget: text}, {label: "Url", name: url, widget: text}]}]}
+          - {label: "Livion", name: livion, widget: object, required: false, fields: [{label: Title, name: title, widget: string}, {label: "Title Label", name: titleLabel, widget: string}, {label: Description, name: description, widget: markdown}, {label: "Link", name: link, widget: string}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Parent Reference", name: "parentReference", widget: "hidden", default: "/"}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - file: "data/pages/it/lavora-con-noi/index.md"
+        label: "Lavora con Noi (Italiano)"
+        name: "careersPage"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "careers-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: markdown}
+          - {label: "Video Url", name: videoUrl, widget: string}
+          - {label: "Intro", name: intro, widget: object, required: false, fields: [{label: Title, name: title, widget: markdown}, {label: "Description", name: description, widget: markdown}]}
+          - {label: "Careers", name: careers, widget: list, required: false, fields: [{label: Title, name: title, widget: markdown}, {label: "Level", name: level, widget: string}, {label: "City", name: city, widget: string}, {label: "Link", name: link, widget: string}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+      - file: "data/pages/it/digital-transformation/index.md"
+        label: "Digital Transformation (Italiano)"
+        name: "digitalTransformationGenericPage"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "digital-transformation-static-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Sections", name: "sections", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Text Blocks", name: "textBlocks", widget: "list", required: false, fields: [{label: "Title", name: "title", required: false, widget: "text"}, {label: "Text", name: "text", widget: "markdown", required: false}]}, {label: "Image", name: "image", widget: "image",required: false}, {label: "Image Description", name: "imageDescription", widget: "string", required: false},{label: "Digital Transformation Link", name: "link", required: false, widget: "relation", collection: "digitalTransformation", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}, {label: "Areas", name: "areas", widget: "list"}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+          - {label: "Child Reference", name: "childReference", widget: "hidden", default: "/en/digital-transformation"}
+      - file: "data/pages/en/digital-transformation/index.md"
+        label: "Digital Transformation (English)"
+        name: "digitalTransformationGenericPageEN"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "digital-transformation-static-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Sections", name: "sections", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Text Blocks", name: "textBlocks", widget: "list", required: false, fields: [{label: "Title", name: "title", required: false, widget: "text"}, {label: "Text", name: "text", widget: "markdown", required: false}]}, {label: "Image", name: "image", widget: "image",required: false}, {label: "Image Description", name: "imageDescription", widget: "string", required: false},{label: "Digital Transformation Link", name: "link", required: false, widget: "relation", collection: "digitalTransformation", searchFields: ['title'], valueField: "{{slug}}", displayFields: ["{{title}}"]}, {label: "Areas", name: "areas", widget: "list"}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+          - {label: "Parent Reference", name: "parentReference", widget: "hidden", default: "/digital-transformation"}
+
+      - file: "data/pages/it/chi-siamo/index.md"
+        label: "Chi Siamo (Italiano)"
+        name: "aboutUs"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-us-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Values", name: "values", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Image", name: "image", widget: "image"}]}
+          - {label: "Timeline Image", name: timelineImage, widget: image, required: false}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true}
+          - {label: "Child Reference", name: "childReference", widget: "hidden", default: "/en/about-us"}
+      - file: "data/pages/en/about-us/index.md"
+        label: "Chi Siamo (English)"
+        name: "aboutUsEN"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-us-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Values", name: "values", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Image", name: "image", widget: "image"}]}
+          - {label: "Timeline Image", name: timelineImage, widget: image, required: false}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+          - {label: "Parent Reference", name: "parentReference", widget: "hidden", default: "/chi-siamo"}
+
+      - file: "data/pages/it/livion/index.md"
+        label: "Livion (Italiano)"
+        name: "livion"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "livion-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Subtitle", name: subtitle, widget: string, required: false}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Featured Image", name: featuredImage, widget: image, required: false}
+          - {label: "Demo Button text", name: demoButtontext, widget: string, required: false}
+          - {label: "Areas Title", name: areasTitle, widget: string, required: false}
+          - {label: "areas", name: "areas", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Image", name: "image", widget: "image"}]}
+          - {label: "Sectors Menu Title", name: sectorsTitle, widget: string, required: false}
+          - {label: "Sectors Menu", name: "sectorsMenu", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+          - {label: "Sectors Blocks", name: "sectorsBlocks", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+          - {label: "Touch Economy", name: touchEconomy, widget: object, required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Blocks", name: "blocks", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+          - {label: "Child Reference", name: "childReference", widget: "hidden", default: "/en/livion"}
+
+      - file: "data/pages/en/livion/index.md"
+        label: "Livion (English)"
+        name: "livionEN"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "livion-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Subtitle", name: subtitle, widget: string, required: false}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Featured Image", name: featuredImage, widget: image, required: false}
+          - {label: "Demo Button text", name: demoButtontext, widget: string, required: false}
+          - {label: "Areas Title", name: areasTitle, widget: string, required: false}
+          - {label: "areas", name: "areas", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string"}, {label: "Description", name: "description", widget: "markdown"}, {label: "Image", name: "image", widget: "image"}]}
+          - {label: "Sectors Menu Title", name: sectorsTitle, widget: string, required: false}
+          - {label: "Sectors Menu", name: "sectorsMenu", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+          - {label: "Sectors Blocks", name: "sectorsBlocks", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}]}
+          - {label: "Touch Economy", name: touchEconomy, widget: object, required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Blocks", name: "blocks", widget: "list", required: false, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Image", name: "image", widget: "image", required: false}]}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Visible", name: "visible", widget: "boolean", default: true, required: false}
+          - {label: "Parent Reference", name: "parentReference", widget: "hidden", default: "/livion"}
+
+      - file: "data/pages/it/contatti/index.md"
+        label: "Contatti (Italiano)"
+        name: "contacts"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contacts-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Offices", name: "offices", widget: "list", required: false, default: null, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Map Link", name: "mapLink", widget: "string", required: false}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Form Texts", name: formTexts, widget: "object", required: false, default: null, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Button", name: "button", widget: "string", required: false}]}
+          - {label: "Child Reference", name: "childReference", widget: "hidden", default: "/en/contacts"}
+
+      - file: "data/pages/en/contacts/index.md"
+        label: "Contatti (English)"
+        name: "contactsEN"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "contacts-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Offices", name: "offices", widget: "list", required: false, default: null, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Map Link", name: "mapLink", widget: "string", required: false}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Form Texts", name: formTexts, widget: "object", required: false, default: null, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Button", name: "button", widget: "string", required: false}]}
+          - {label: "Parent Reference", name: "parentReference", widget: "hidden", default: "/contatti"}
+
+
+      - file: "data/pages/it/competence-center/index.md"
+        label: "Competence Center (Italiano)"
+        name: "competence"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "competence-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Form Texts", name: formTexts, widget: "object", required: false, default: null, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Button", name: "button", widget: "string", required: false}]}
+          - {label: "child Reference", name: "childReference", widget: "hidden", default: "/en/competence-center"}
+
+      - file: "data/pages/en/competence-center/index.md"
+        label: "Competence Center (English)"
+        name: "competenceEN"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "competence-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Form Texts", name: formTexts, widget: "object", required: false, default: null, fields: [{label: "Title", name: "title", widget: "string", required: false}, {label: "Description", name: "description", widget: "markdown", required: false}, {label: "Button", name: "button", widget: "string", required: false}]}
+          - {label: "Parent Reference",   name: "parentReference", widget: "hidden", default: "/competence-center"}
+
+      - file: "data/pages/it/press/index.md"
+        label: "Rassegna Stampa (Italian)"
+        name: "press"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "press-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "File Download Label", name: "fileDownloadLabel", widget: string, required: false, default: ""}
+          - {label: "File Download", name: filedownload, widget: "file", required: false, default: null}
+          - {label: "Links", name: links, widget: "list", fields: [{label: "Title", name: title, widget: string}, {label: "Description", name: description, widget: "markdown", required: false}, {label: "link", name: link, widget: string, required: false, default: null}, {label: "file Download", name: "filedownload", widget: "image", required: false, default: null}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Form Texts", name: formTexts, widget: "object", required: false, default: null, fields: [{label: "firstTitle", name: "firstTitle", widget: "string", required: false}, {label: "Second Title", name: "secondTitle", widget: "string", required: false}, {label: "Button Text", name: "buttonText", widget: "string", required: false}]}
+          - {label: "Child Reference", name: "childReference", widget: "hidden", default: "/en/press"}
+
+      - file: "data/pages/en/press/index.md"
+        label: "Rassegna Stampa (English)"
+        name: "pressEN"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "press-page"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "File Download Label", name: "fileDownloadLabel", widget: string, required: false, default: ""}
+          - {label: "File Download", name: filedownload, widget: "file", required: false}
+          - {label: "Links", name: links, widget: "list", fields: [{label: "Title", name: title, widget: string}, {label: "Description", name: description, widget: "markdown", required: false}, {label: "link", name: link, widget: string, required: false, default: null}, {label: "file Download", name: "filedownload", widget: "image", required: false, default: null}]}
+          - {label: "Form Id", name: formId, widget: "string", required: false}
+          - {label: "Form Texts", name: formTexts, widget: "object", required: false, default: null, fields: [{label: "firstTitle", name: "firstTitle", widget: "string", required: false}, {label: "Second Title", name: "secondTitle", widget: "string", required: false}, {label: "Button Text", name: "buttonText", widget: "string", required: false}]}
+          - {label: "Parent Reference", name: "parentReference", widget: "hidden", default: "/press"}
+
+      - file: "data/pages/it/risorse/index.md"
+        label: "Resources Static Page (Italian)"
+        name: "resources"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resources-pages"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Placeholder Search", name: placeholderSearch, widget: string}
+          - {label: "Placeholder Search Modal", name: placeholderSearchModal, widget: string}
+          - {label: "Form Id", name: formId, widget: "hidden", required: false}
+          - {label: "Form Texts", name: formTexts, widget: "hidden", required: false, default: null, fields: [{label: "firstTitle", name: "firstTitle", widget: "string", required: false}, {label: "Second Title", name: "secondTitle", widget: "string", required: false}, {label: "Button Text", name: "buttonText", widget: "string", required: false}]}
+          - {label: "Child Reference", name: "childReference", widget: "hidden", default: "/en/resources"}
+
+      - file: "data/pages/en/resources/index.md"
+        label: "Resources Static Page (English)"
+        name: "resourcesEN"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resources-pages"}
+          - {label: "Page Title", name: pageTitle, widget: string}
+          - {label: "Meta Description", name: metaDescription, widget: string}
+          - {label: "Meta Keywords", name: metaKeywords, widget: string}
+          - {label: "Social Preview Image", name: socialPreviewImage, widget: image, required: false, default: null}
+          - {label: "Title", name: title, widget: string}
+          - {label: "Description", name: description, widget: "markdown", required: false}
+          - {label: "Form Id", name: formId, widget: "hidden", required: false}
+          - {label: "Form Texts", name: formTexts, widget: "hidden", required: false, default: null, fields: [{label: "firstTitle", name: "firstTitle", widget: "string", required: false}, {label: "Second Title", name: "secondTitle", widget: "string", required: false}, {label: "Button Text", name: "buttonText", widget: "string", required: false}]}
+          - {label: "Parent Reference", name: "parentReference", widget: "hidden", default: "/risorse"}
+

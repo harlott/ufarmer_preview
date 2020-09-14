@@ -1,0 +1,145 @@
+@import "../../../styles/palette.scss";
+.home {
+  &__competence {
+    padding: 1.5em 0px;
+    align-items: center;
+    margin-bottom: initial !important;
+    background: get-color-from-palette("background-blue");
+    &__container {
+      margin-top: 1.5em;
+    }
+    &__link {
+      padding-top: 2.4em;
+      padding-bottom: 1.9em;
+      width: 90%;
+      margin: 0px auto;
+      a {
+        color: #fff;
+        display: block;
+        width: 100%;
+        background-image: url("../../../../static/img/arrow_right-slider.svg");
+        background-repeat: no-repeat;
+        background-position: 95%;
+        background-size: 1.5em;
+        .text {
+          width: 70%;
+          display: inline-block;
+          font-size: 23px !important;
+          font-family: "gotham-medium";
+          font-weight: normal;
+          text-transform: capitalize;
+          letter-spacing: 0.06px;
+          line-height: 37.5px;
+        }
+      }
+      a:hover {
+        color: #fff;
+      }
+      &__separator {
+        opacity: 0.39;
+        border-bottom: 1px solid #fff;
+        height: 1px;
+        width: 90%;
+        margin: 0px auto;
+      }
+    }
+    &__title {
+      & > .competence {
+        font-size: 30px;
+        line-height: 34px;
+      }
+    }
+
+    &__action {
+      display: block;
+      text-align: center;
+      margin: 3em auto;
+    }
+    &__action:hover {
+      color: #fff;
+    }
+  }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+  .home__competence {
+    &__title {
+      padding: 0px;
+      margin-left: -7% !important;
+      .competence {
+        font-size: 60px;
+        line-height: 64px;
+      }
+    }
+    &__container {
+      margin-top: 3.5em;
+    }
+    &__link {
+      width: 100%;
+      padding: 2em 1em;
+    }
+    &__link__separator {
+      width: 100%;
+    }
+    &__action {
+      margin: 5em auto !important;
+    }
+  }
+}
+
+@include desktop {
+  .home__competence {
+    &__title {
+      margin-left: -22%;
+      .competence {
+        font-size: 94px;
+        line-height: 98px;
+      }
+    }
+  }
+}
+
+@include widescreen {
+  .home__competence {
+    padding-top: 5em;
+    &__title {
+      padding-left: 0.3em;
+      & > .competence {
+        font-size: 104px;
+        line-height: 108px;
+      }
+    }
+    &__container {
+      padding-right: 0% !important;
+      padding-left: 0% !important;
+    }
+
+    &__link {
+      padding: 2.5% 3em;
+      a {
+        .text {
+          display: inline-block;
+          font-size: 38px !important;
+          text-transform: capitalize;
+          letter-spacing: 0.1px;
+          line-height: 75px;
+        }
+      }
+    }
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home__competence__link {
+    a {
+      transition: background-position 0.2s ease-in-out;
+    }
+    &:hover {
+      a {
+        background-position: 100%;
+      }
+    }
+  }
+}

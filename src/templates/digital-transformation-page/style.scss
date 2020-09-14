@@ -1,0 +1,39 @@
+@import '~bulma';
+@import '../../styles/palette.scss';
+
+.phases-image{
+    padding-top: 60px;
+    padding-bottom: 100px;
+    overflow: hidden;
+    &__title-magenta{
+        font-family: 'gotham-bold';
+        color: get-color-from-palette('text-magenta');
+        font-size: 42px !important;
+        line-height: 42px;
+        letter-spacing: -0.22px;
+        text-align: left;
+        padding-bottom: 40px !important;
+        max-width: 1157px !important;
+    }
+    // &__img-container{
+    //     overflow-x: scroll;
+    //     &__img{
+    //         min-width: 768px;
+    //         padding-bottom: 40px;
+    //     }
+    // }
+}
+
+@include tablet {
+    .phases-image__img-container {
+        overflow-x: hidden;
+    }
+}
+
+@include desktop {
+    .phases-image__title-magenta {
+        font-size: 62px !important;
+        line-height: 80px !important;
+        letter-spacing: 0.17px !important;
+    }
+}

@@ -1,0 +1,116 @@
+@import '~bulma';
+@import "../../styles/palette.scss";
+
+$container-size: 1.5em;
+.gallery-content {
+    padding-top: $container-size;
+    height: 800px;
+    background: get-color-from-palette('background-blue');
+    color: #fff;
+    overflow: hidden;
+    &__hz-margin-less{
+        padding-left: initial !important;
+        padding-right: initial !important;
+    }
+        
+    &__title{
+        font-family: 'gotham-bold';
+        font-size: 10px;
+        letter-spacing: 14.14px;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 4em;
+        padding-top: 6em;
+    }
+    
+    &__contents-container{
+        -webkit-transition: all 0.3s ease-out;
+        -moz-transition: all 0.3s ease-out;
+        -o-transition:all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+        padding-bottom: 30px;
+        left: 0px;
+        width: 2000px;
+    }
+
+    &__bg-container {
+        flex: none;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100% !important;
+        height: 530px;
+        &__content {
+            padding: 19em $container-size $container-size $container-size;
+            .year, .place {
+                color: get-color-from-palette('primary');
+            }
+            .year{
+                font-weight: bold;
+            }
+            .place{
+                line-height: .8em;
+            }
+            .title {
+                color: #fff;
+                margin-bottom: 0px !important;
+                font-family: 'gotham-bold';
+                font-size: 50px;
+            }
+        }
+        &__pagination {
+            padding: 0px 1.5em;
+            width: 100%;
+            text-align: center;
+            .arrow-left, .tot-items, .arrow-right{
+                display: inline;
+            }
+            
+
+            .tot-items{
+                padding: 0 2em;
+                font-weight: bold;
+            }
+            .arrow-left{
+                background-image: url('../../../static/img/arrow_left-slider.png');
+            }
+            .arrow-right{
+                background-image: url('../../../static/img/arrow_right-slider.svg');
+            }
+            .arrow-left, .arrow-right{
+                background-repeat: no-repeat;
+                padding: .5em 2.5em 2.5em 2.5em;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+    .gallery-content {
+        height: auto !important;
+        position: relative;
+    }
+
+    .gallery-content__contents-container {
+        margin-bottom: 0px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .gallery-content__bg-container__pagination {
+        position: absolute;
+        bottom: 66px;
+        left: 17%;
+        width: auto;
+        margin: 0px !important;
+        padding: 0px !important;
+    }
+}
+
+@include desktop {
+    .gallery-content__bg-container {
+        height: 750px;
+    }
+}

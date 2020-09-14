@@ -1,0 +1,111 @@
+@import '~bulma';
+@import '../../styles/palette.scss';
+
+.theme-blue {
+  color: get-color-from-palette('text-primary');
+  background-color: get-color-from-palette('background-blue');
+}
+
+.main-article-theme-blue {
+  color: get-color-from-palette('text-primary');
+  background-color: get-color-from-palette('background-blue');
+}
+
+.main-article-section {
+  padding-top: 160px !important;
+  padding-bottom: 24px !important;
+  &__container {
+    max-width: 1157px !important;
+    margin: 0px auto !important;
+  }
+  &__body {
+    &__section {
+      margin-bottom: 37.31px;
+      font-family: 'gotham-black';
+      font-size: 9px;
+      line-height: 25px;
+      letter-spacing: 12.58px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    &__title {
+      font-family: 'gotham-bold';
+      font-size: 37px !important;
+      line-height: 38px;
+      letter-spacing: -0.19px;
+      text-align: left;
+      margin-bottom: 45px;
+    }
+    &__case-study {
+      font-family: 'gotham-light';
+      font-size: 18px !important;
+      line-height: 32px;
+      letter-spacing: 0.05px;
+      text-align: left;
+      margin-bottom: 45px;
+    }
+  }
+  &__link {
+    cursor: pointer;
+    color: get-color-from-palette('white') !important;
+    background-image: url('../../../static/img/fill-blue.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 205px;
+    height: 196px;
+    margin: 0 auto;
+    padding: 60px 15px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__text {
+      display: block;
+      font-family: 'gotham-black';
+      font-size: 11px !important;
+      line-height: 21px;
+      letter-spacing: 5.31px;
+      text-transform: uppercase;
+      margin-bottom: 20px !important;
+      text-align: center;
+    }
+    &__arrow {
+      width: 20px;
+      height: 52px;
+    }
+  }
+  &__link:hover{
+    color: inherit !important;
+  }
+}
+
+@include tablet {
+
+}
+
+@include desktop {
+
+  .main-article-section__link {
+    width: 280px;
+    height: 269px;
+    &__arrow {
+      width: 24px;
+      height: 64px;
+    }
+  }
+
+  .main-article-section__body__section {
+    margin-bottom: 33px;
+    font-size: 12px;
+    line-height: 36px;
+    letter-spacing: 12px;
+  }
+
+  .main-article-section__body__title {
+    font-size: 74px !important;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    margin-bottom: 121px;
+  }
+}

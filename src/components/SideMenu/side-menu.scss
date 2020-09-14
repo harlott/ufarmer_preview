@@ -1,0 +1,32 @@
+@import '../../styles/palette.scss';
+.side-menu {
+  &__info-block {
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+    &:last-of-type {
+      padding-bottom: 98px;
+    }
+    &__title {
+      color: get-color-from-palette('background-primary');;
+      font-family: 'gotham-black';
+      font-size: 11px;
+      letter-spacing: 12px;
+      line-height: 36px;
+      text-transform: uppercase;
+    }
+    &__text, &__link {
+      color: get-color-from-palette('text-primary');
+      font-family: 'gotham-light';
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: 25px;
+    }
+    &__link {
+      text-decoration: underline;
+      &:hover, &:visited {
+        color: get-color-from-palette('text-primary');
+      }
+    }
+  }
+}

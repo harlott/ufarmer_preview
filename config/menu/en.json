@@ -1,0 +1,109 @@
+{
+  "primaryNavs": [
+    {
+      "name": "Digital Transformation",
+      "link": "/digital-transformation",
+      "navbar": true,
+      "subItems": [
+        {
+          "name": "Business Transformation",
+          "link": "/business-transformation"
+        },
+        {
+          "name": "Customer Engagement",
+          "link": "/custormer-engagement"
+        },
+        {
+          "name": "Employee Empowerment",
+          "link": "/employee-empowerment"
+        },
+        {
+          "name": "Operation Optimization",
+          "link": "/opertaion-optimization"
+        }
+      ]
+    },
+    {
+      "name": "Competence center",
+      "link": "/competence-center",
+      "navbar": false,
+      "subItems": []
+    },
+    {
+      "name": "Resources",
+      "link": "/resources",
+      "navbar": true,
+      "subItems": []
+    },
+    {
+      "name": "Careers",
+      "link": "/careers",
+      "navbar": true,
+      "subItems": []
+    }
+  ],
+  "secondaryNav": {
+    "aboutLinks": [
+      {
+        "name": "Who we are",
+        "link": "/about-us"
+      },
+      {
+        "name": "Press",
+        "link": "/about/press"
+      },
+      {
+        "name": "Livion",
+        "link": "/about/livion"
+      },
+      {
+        "name": "Contacts",
+        "link": "/about/contacts"
+      }
+    ],
+    "socialLinks": [
+      {
+        "name": "linkedin",
+        "link": "https://www.linkedin.com/company/cws-srl/"
+      },
+      {
+        "name": "facebook",
+        "link": "https://www.facebook.com/cwssrl/"
+      },
+      {
+        "name": "instagram",
+        "link": "https://www.instagram.com/cwsdigitalsolutions/"
+      },
+      {
+        "name": "twitter",
+        "link": "https://twitter.com/CWS_srl/"
+      }
+    ],
+    "legalLinks": [
+      {
+        "name": "Privacy",
+        "link": "/legal/privacy"
+      },
+      {
+        "name": "Cookies policy",
+        "link": "/legal/cookies-policy"
+      }
+    ]
+  },
+  "certifications": [
+    {
+      "name": "Quality certification",
+      "link": "/certificate/quality"
+    }
+  ],
+  "languagesLinks": [
+    {
+      "name": "ITA",
+      "link": "/config/lang/ita"
+    },
+    {
+      "name": "ENG",
+      "link": "/config/lang/eng"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+@import "../../styles/palette.scss";
+
+.ScrollbarTargetPlaceholder {
+  overflow-x: scroll !important;
+  overflow-y: auto !important;
+  -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+  scrollbar-width: none !important;  /* Firefox */
+  &::-webkit-scrollbar { 
+    display: none !important;  /* Safari and Chrome */
+  }
+}
+
+.CustomScrollbarComponent {
+  display: block;
+  width: 100%;
+  padding: 0px 24px;
+  &__placeholder {
+    position: relative;
+    display: block;
+    background-color: get-color-from-palette('link-primary');
+    width: 100%;
+    max-width: 514px;
+    height: 7px;
+    border-radius: 3.5px;
+    margin: auto;
+    cursor: grab;
+    pointer-events: none;
+    touch-action: none;
+    opacity: 0;
+    &.is_visible {
+      pointer-events: all;
+      touch-action: manipulation;
+      opacity: 1;
+    }
+    &.is_grabbing {
+      cursor: grabbing;
+    }
+    &__scrollBlock {
+      position: absolute;
+      top: 0px;
+      display: block;
+      background-color: get-color-from-palette('border-primary');
+      width: 64px;
+      height: 7px;
+      border-radius: 3.5px;
+      pointer-events: none;
+      touch-action: none;
+    }
+  }
+}

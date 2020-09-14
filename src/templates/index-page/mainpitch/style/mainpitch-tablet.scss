@@ -1,0 +1,25 @@
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+    .home{
+        &__mainpitch{
+            padding-top: 180px !important;
+            padding-bottom: 150px !important;
+            &__title {
+                margin-bottom: initial;
+                h1 {
+                    font-size: 33px !important;
+                    letter-spacing: -1.38px;
+                    line-height: 48px;
+                }
+            }
+            &__image__container {
+                padding: 0px !important;
+                text-align: right;
+            }
+            &__image {
+                width: 91%;
+            }
+        }
+    }
+}

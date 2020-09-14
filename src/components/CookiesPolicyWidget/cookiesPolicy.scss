@@ -1,0 +1,83 @@
+@import '../../styles/palette.scss';
+
+.cookies-policy-widget {
+  pointer-events: none;
+  touch-action: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0);
+  &__placeholder {
+    display: block;
+    height: 100% !important;
+  }
+  &__container {
+    height: 100% !important;
+    &__content {
+      pointer-events: all;
+      touch-action: auto;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 14px 51px 11px 47px;
+      background-color: get-color-from-palette('link-primary');
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      &__text-container {
+        font-family: 'gotham-bold';
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: -0.07px;
+        &__description {
+          padding: 0 !important;
+          margin: 0 !important;
+          color: get-color-from-palette('white');
+        }
+        &__link {
+          padding: 0 !important;
+          margin: 0 !important;
+          color: get-color-from-palette('background-primary');
+          &:hover {
+            color: get-color-from-palette('white');
+          }
+        }
+      }
+      &__button-container {
+        &__button {
+          cursor: pointer;
+          display: block;
+          border: none !important;
+          width: 51px !important;
+          height: 51px !important;
+          border-radius: 25.5px !important;
+          color: get-color-from-palette('white');
+          background-color: get-color-from-palette('background-blue');
+          font-family: 'gotham-bold';
+          font-size: 12px;
+          line-height: 20px;
+          letter-spacing: -0.06px;
+        }
+      }
+    }
+  }
+}
+
+@import '~bulma';
+
+@include tablet {
+  .cookies-policy-widget__container {
+    position: relative;
+    &__content {
+      // margin: 20px 0px;
+      max-width: 456px;
+      bottom: 19px;
+    }
+  }
+}

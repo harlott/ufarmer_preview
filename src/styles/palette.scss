@@ -1,0 +1,32 @@
+// Base schema colors
+$palette-colors: (
+  "white": #ffffff,
+  "white-transparent": rgba(255, 255, 255, 0.5),
+  "black": #000000,
+  "primary": #00bfb2,
+  "secondary": #373a36,
+  "text-primary": #ffffff,
+  "text-secondary": #eeeeee,
+  "text-magenta": #E71D72,
+  "background-primary": #29e7d6,
+  "background-secondary": #f8f8f8,
+  "link-primary": #0D1FCF,
+  "border-primary": #ececec,
+  "background-primary-gradient": linear-gradient(145.63deg, #000078 0.09%, #000016 100%),
+  "background-primary-gradient-reverse": linear-gradient(145.63deg, #000016 0.09%, #000078 100%),
+  "background-primary-gradient-livion": linear-gradient(180deg, #110553 0%, #0D1FCF 100%),
+  "gradient-blue-magenta": linear-gradient(96deg, #0D1FCF 0%, #F00381 100%),
+  "background-magenta": #f00381,
+  "background-blue": #110553,
+  "indicator-background": #E4E3E6,
+  "indicator-active": #D2D0D6,
+  'button-text': #505050,
+  'button-background': #e5e5e5,
+  'background-green-light': #2DF77F,
+  'text-gray': #9694A2,
+);
+
+@function get-color-from-palette($key: "primary"){
+  @return map-get($palette-colors, $key);
+}
+  

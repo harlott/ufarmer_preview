@@ -1,0 +1,215 @@
+@import "../../../styles/palette.scss";
+
+$container-size: 1.5em;
+.slider-container{
+    position: relative;
+    .image-container {
+        width: 100%;
+        height: 530px;
+        position: absolute;
+        z-index: 0;
+        background-size: cover;
+        background-position: top center;
+        margin-left: none;
+
+    }
+}
+.home__case-history-expanded__bg-container{
+    position: absolute;
+    z-index: 1;
+    margin-left: none;
+}
+.home {
+    &__case-history-expanded {
+        display: none;
+        padding-top: $container-size;
+        height: 800px;
+        background: get-color-from-palette('background-blue');
+        color: #fff;
+        overflow: hidden;
+        &__hz-margin-less{
+            padding-left: initial !important;
+            padding-right: initial !important;
+        }
+            
+        &__title{
+            font-family: 'gotham-bold';
+            font-size: 10px;
+            letter-spacing: 14.14px;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 4em;
+            padding-top: 6em;
+        }
+        
+        &__contents-container{
+            -webkit-transition: all 0.3s ease-out;
+            -moz-transition: all 0.3s ease-out;
+            -o-transition:all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+            padding-bottom: 30px;
+            left: 0px;
+            width: 2000px;
+        }
+
+        &__bg-container {
+            position: relative;
+            flex: none;
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            width: 100% !important;
+            height: 530px;
+            &__content {
+                padding: 19em $container-size $container-size $container-size;
+                .year, .place {
+                    color: get-color-from-palette('primary');
+                }
+                .year{
+                    font-weight: bold;
+                }
+                .place{
+                    line-height: .8em;
+                }
+                .title {
+                    color: #fff;
+                    margin-bottom: 0px !important;
+                    font-family: 'gotham-bold';
+                    font-size: 50px;
+                }
+            }
+            &__pagination {
+                padding: 530px 1.5em;
+                text-align: center;
+                .arrow-left, .tot-items, .arrow-right{
+                    display: inline;
+                }
+                
+                .tot-items{
+                    padding: 0 2em;
+                    font-weight: bold;
+                }
+                .arrow-left{
+                    background-image: url('../../../../static/img/arrow_left-slider.png');
+                }
+                .arrow-right{
+                    background-image: url('../../../../static/img/arrow_right-slider.svg');
+                }
+                .arrow-left, .arrow-right{
+                    background-repeat: no-repeat;
+                    padding: .5em 2.5em 2.5em 2.5em;
+                    cursor: pointer;
+                    -webkit-tap-highlight-color: rgba(0,0,0,0);
+                }
+            }
+        }
+    }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+    
+@include tablet {
+    .slider-container{
+        position: relative;
+        .image-container {
+            padding: 0px !important;
+            position: relative;
+            width: 110%;
+            height: 665px;
+            background-size: cover;
+            background-position: top center;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -o-transition:all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+            margin-left: none;
+        }
+        .image-over-container{
+            position: absolute;
+            right: 0;
+            width: 130%;
+        }
+    }
+    .home__case-history-expanded__bg-container{
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition:all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+        margin-left: none;
+    }
+    .home{
+        &__case-history-expanded{
+            display: block;
+            padding-top: 0px;
+            height: 900px;
+            &__title{
+                font-size: 12px;
+                letter-spacing: 12px;
+                line-height: 36px;
+                width: 100%;
+                text-align: left;
+                padding-bottom: 0px;
+                padding-top: 165px;
+            }
+            &__bg-container{
+                position: relative;
+                background-size: contain;
+                background-position: top right;
+                background-repeat: no-repeat;
+                width: 470px !important;
+                height: 530px;
+                &__content{
+                    padding: 6em 0px 0px 0px;
+                    .title{
+                        height: 188px;
+                        width: 470px;
+                        color: #FFFFFF;
+                        font-size: 70px;
+                        letter-spacing: -0.36px;
+                        line-height: 72px;
+                        margin-left: -1.1%;
+                    }
+                    .year{
+                        height: 99px;
+                        width: 100px;
+                        font-size: 26px;
+                        letter-spacing: -0.58px;
+                        line-height: 124px;
+                        padding-left: 22px;
+                    }
+                    .place {
+                        height: 36px;
+                        width: 114px;
+                        font-size: 34px;
+                        font-weight: 300;
+                        letter-spacing: -0.76px;
+                        line-height: 36px;
+                        padding-top: 0px;
+                        padding-left: 22px;
+                    }
+                }
+                &__pagination {
+                    z-index: 2;
+                    padding: 0px;
+                    position: absolute;
+                    margin-top: 494px;
+                    text-align: left;
+                }
+            }
+            
+        }
+    }
+}
+
+@include widescreen{
+    .home__case-history__contents-container{
+        overflow-x: hidden;
+        height: 670px;
+    }
+    .image-over-container{
+        width: 145% !important;
+    }
+    .slider-container .image-container {
+        width: 116%;
+    }
+}

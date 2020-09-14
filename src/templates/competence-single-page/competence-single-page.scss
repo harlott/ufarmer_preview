@@ -1,0 +1,105 @@
+@import '../../styles/palette.scss';
+
+.competence-single-page {
+  background-color: get-color-from-palette('background-blue');
+  &__text-block {
+    background-color: get-color-from-palette('background-blue');
+    padding: 40px 0px;
+  }
+  &__block {
+    padding: 145px 0px 100px 0px;
+    &__page-title {
+      display: block;
+      width: 100%;
+      height: 530px;
+      position: relative;
+      &__image-title {
+        position: absolute !important;
+        z-index: 1;
+        width: 80%;
+        height: 480px;
+        right: 0;
+      }
+      &__text-block {
+        display: inline-block;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: stretch;
+        &__category {
+          z-index: 1;
+          color: get-color-from-palette('text-primary');
+          font-family: 'gotham-black';
+          font-size: 9px;
+          letter-spacing: 12px;
+          line-height: 25px;
+        }
+        &__title {
+          z-index: 1;
+          color: get-color-from-palette('text-primary');
+          font-family: 'gotham-bold';
+          font-size: 39px;
+          letter-spacing: -0.26px;
+          line-height: 46px;
+        }
+      }
+    }
+  }
+  &__page-content {
+    padding-bottom: 40px !important;
+  }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+  .competence-single-page__block__page-title__text-block__title {
+    font-size: 50px !important;
+    line-height: 52px !important;
+  }
+}
+
+@include desktop {
+  .competence-single-page {
+    &__block {
+        padding: 136px 0px 86px 0px;
+        &__page-title {
+            height: 550px !important;
+            &__image-title {
+                width: 70%;
+            }
+        }
+        &__page-title__text-block__category {
+            font-size: 12px;
+            line-height: 36px;
+            margin-bottom: 24px;
+        }
+        &__page-title__text-block__title {
+            font-size: 74px !important;
+            line-height: 80px !important;
+            width: 85%;
+        }
+    }
+    &__page-content{
+      .solution-article-section__body{
+        width: 50% !important;
+      }
+    }
+  } 
+}
+
+@include widescreen {
+  .competence-single-page__block__page-title__image-title {
+    width: 80%;
+  }
+
+  .competence-single-page__block__page-title__text-block__title {
+    width: 70%;
+  }
+  .competence-card-container{
+    width: 32%;
+  } 
+
+}

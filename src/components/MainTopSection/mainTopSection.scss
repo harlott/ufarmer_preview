@@ -1,0 +1,131 @@
+@import "../../styles/palette.scss";
+
+$title-line-height: 1.2;
+
+.main-top-section {
+  padding-top: 140px !important;
+  padding-bottom: 65px !important;
+  position: relative;
+  align-items: center;
+  margin-bottom: initial !important;
+  &:not(.transparent) {
+    background: get-color-from-palette("background-primary-gradient-reverse");
+  }
+  color: #fff;
+  &__big-float-image {
+      display: none;
+  }
+  &__title, &__subtitle {
+      font-family: 'gotham-bold';
+      display: flex;
+      line-height: $title-line-height;
+      flex-direction: column;
+      padding-bottom: 36.3px;
+      h1  {
+          font-size: 31px !important;
+          letter-spacing: 0.08px;
+      }
+  }
+  &__subtitle{
+      font-size: 31px !important;
+      letter-spacing: 0.08px;
+  }
+  &__description{
+    font-family: 'gotham-light';
+    font-size: 18px;
+    line-height: 29px;
+    letter-spacing: 0.05px;
+  }
+
+  &__image {
+      width: 97.5%;
+      max-width: 306px;
+  }
+      
+  &__image__container {
+      padding: 2em 0px !important;
+      text-align: center;
+  }
+}
+
+@import "~bulma/sass/utilities/_all.sass";
+
+@include tablet {
+    .main-top-section{
+      padding-top: 180px !important;
+      padding-bottom: 150px !important;
+      &__big-float-image {
+          display: initial;
+          position: absolute;
+          top: -8%;
+          right: 0;
+          width: 50%;
+          max-width: 640px;
+          height: auto;
+      }
+      &__title {
+          margin-bottom: initial;
+          h1 {
+              font-size: 33px !important;
+              letter-spacing: -1.38px;
+              line-height: 48px;
+          }
+      }
+      &__image__container {
+          padding: 0px !important;
+          text-align: right;
+          &.hide-desktop {
+                display: none;
+          }
+      }
+      &__image {
+          width: 91%;
+      }
+      &__description{
+        width: 50%;
+      }
+    }
+}
+
+@include desktop {
+    .main-top-section{
+      padding-top: 224px !important;
+      padding-bottom: 194px !important;
+      &__title {
+          margin-bottom: initial;
+          h1 {
+              font-size: 42px !important;
+              line-height: 60px !important;
+          }
+      }
+      &__image__container {
+          text-align: right;
+      }
+      &__image{
+          width: 78%;
+      }
+    }
+}
+
+@include widescreen {
+    .main-top-section{
+        padding-top: 224px !important;
+        padding-bottom: 143px !important;
+        &__title {
+            margin-bottom: initial;
+            h1 {
+                font-size: 62px !important;
+                letter-spacing: -1.38px;
+                line-height: 83px !important;
+            }
+        }
+        &__image__container {
+            text-align: right;
+        }
+        &__image{
+            width: 400px !important;
+            height: 400px !important;
+            max-width: initial;
+        }
+    }
+}

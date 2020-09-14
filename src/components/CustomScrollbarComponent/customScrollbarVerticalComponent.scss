@@ -1,0 +1,66 @@
+@import "../../styles/palette.scss";
+
+.CustomScrollbarVerticalComponent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  &__ScrollbarVerticalTargetPlaceholder {
+    order: 0;
+    flex: 1 1 auto;
+    height: 100%;
+    overflow-x: auto !important;
+    overflow-y: scroll !important;
+    -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+    scrollbar-width: none !important;  /* Firefox */
+    &::-webkit-scrollbar { 
+      display: none !important;  /* Safari and Chrome */
+    }
+    &.is_visible {
+      padding-right: 80px;
+    }
+  }
+  &__ScrollbarPlaceholder {
+    order: 1;
+    flex: 0 1 auto;
+    display: block;
+    width: auto;
+    height: 100%;
+    padding: 0px 0px;
+    &__placeholder {
+      position: relative;
+      display: block;
+      background-color: get-color-from-palette('white-transparent');
+      width: 7px;
+      height: 100%;
+      border-radius: 3.5px;
+      margin: auto;
+      cursor: grab;
+      pointer-events: none;
+      touch-action: none;
+      opacity: 0;
+      &.is_visible {
+        pointer-events: all;
+        touch-action: manipulation;
+        opacity: 1;
+      }
+      &.is_grabbing {
+        cursor: grabbing;
+      }
+      &__scrollBlock {
+        position: absolute;
+        top: 0px;
+        display: block;
+        background-color: get-color-from-palette('white');
+        width: 7px;
+        height: 20px;
+        border-radius: 3.5px;
+        pointer-events: none;
+        touch-action: none;
+      }
+    }
+  }
+}

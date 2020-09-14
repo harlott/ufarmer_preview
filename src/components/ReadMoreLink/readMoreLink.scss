@@ -1,0 +1,60 @@
+@import '../../styles/palette.scss';
+
+.color-white {
+  color: get-color-from-palette('white') !important;
+}
+
+.read-more-link-component {
+  margin: 1.5em 0px;
+  &__url {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    color: get-color-from-palette('link-primary');
+    &:hover {
+      color: get-color-from-palette('link-primary') !important;
+    }
+    &__text {
+      display: none;
+      font-family: 'gotham-black';
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 5.31px;
+      line-height: 11px;
+      margin-right: 30px;
+      text-transform: uppercase;
+    }
+  }
+  &__arrow-img {
+    width: 52px;
+    height: 18px;
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .read-more-link-component {
+    &:hover {
+      .read-more-link-component__arrow-img {
+        transform: translateX(20px);
+      }
+    }
+  }
+}
+
+@import "~bulma";
+
+@include tablet{
+  .read-more-link-component__url__text{
+    display: inline;
+  }
+}
+
+@include desktop{
+  .read-more-link-component__arrow-img {
+    width: 69px !important;
+    height: 25px !important;
+  }
+}

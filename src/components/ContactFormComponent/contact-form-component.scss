@@ -1,0 +1,151 @@
+.contact-form-component {
+    &__mobile-layout {
+        margin: 0px auto !important;
+        padding: 6em 0em !important;
+        background-color: #F00381;
+        display: block;
+    }
+    &__desktop-layout {
+        display: none;
+    }
+    &__first-title {
+        font-family: 'gotham-bold';
+        font-size: 28px;
+        line-height: 39px;
+        letter-spacing: -0.62px;
+        font-weight: bold;
+        color: #ffffff;
+        text-align: left;
+        margin-bottom: 37px;
+    }
+    &__second-title {
+        font-family: 'gotham-bold';
+        font-size: 38px !important;
+        line-height: 38px;
+        letter-spacing: -0.19px;
+        font-weight: bold;
+        color: #110553;
+        text-align: left;
+        margin-bottom: 55px;
+    }
+    &__question {
+        font-family: 'gotham-book';
+        margin: 0px auto 37px auto;
+        text-align: center;
+        font-size: 14px;
+        line-height: 25px;
+        letter-spacing: -0.07px;
+        color: #ffffff;
+    }
+    &__form-button {
+        display: block;
+        margin: 0px auto;
+        border: 1px solid #110553;
+        background: transparent;
+        border-radius: 69.23px;
+        width: 268px;
+        height: 64px;
+        font-family: 'gotham-book';
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: -0.15px;
+        color: #110553;
+        cursor: pointer;
+        transition: all .15s ease-in-out;
+        &:hover {
+            border: 1px solid #FFFFFF;
+            background-color: #FFFFFF;
+            color: #F00381;
+        }
+    }
+}
+
+@import "~bulma";
+
+@include tablet {
+    .contact-form-component {
+        // &__mobile-layout {
+        //     display: none;
+        // }
+        &__desktop-layout {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: stretch;
+            height: 800px;
+            overflow: hidden;
+            &__question-placeholder {
+                order: 0;
+                flex: 1 0;
+                flex-basis: 70vw;
+                height: 100%;
+                overflow: hidden;
+                background-color: #F00381;
+                transition: flex-basis .5s ease-in-out;
+                &__content-block {
+                    margin: 0px auto !important;
+                    padding: 99px 0px !important;
+                    display: block;
+                    width: 70vw;
+                    height: 100%;
+                }
+            }
+            &__form-placeholder {
+                order: 1;
+                flex: 1 0;
+                flex-basis: 70vw;
+                height: 100%;
+                overflow: hidden;
+                background-color: #FFFFFF;
+                opacity: 0.2;
+                transition: flex-basis .5s ease-in-out, opacity .15s ease-in-out;
+                pointer-events: none;
+                touch-action: none;
+                &.form-is-active {
+                    pointer-events: all;
+                    touch-action: all;
+                    opacity: 1;
+                }
+                &__content-block {
+                    margin: 0px auto !important;
+                    padding: 99px 0px !important;
+                    display: block;
+                    width: 70vw;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .contact-form-component__first-title {
+        font-size: 59px !important;
+        line-height: 69px !important;
+    }
+
+    .contact-form-component__second-title {
+        font-size: 74px !important;
+        line-height: 80px !important;
+    }
+
+    .contact-form-component__question {
+        font-size: 18px !important;
+        line-height: 32px !important;
+        text-align: left;
+        margin-left: 46px;
+    }
+
+    .contact-form-component__form-button {
+        margin: 0 !important;
+        margin-left: 46px !important;
+        height: 73.85px !important;
+        width: 221.85px !important;
+    }
+}
+
+@include widescreen {
+    .contact-form-component {
+        padding: 198px 0px !important;
+    }
+}
+

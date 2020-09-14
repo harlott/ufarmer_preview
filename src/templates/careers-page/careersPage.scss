@@ -1,0 +1,109 @@
+@import '../../styles/palette.scss';
+
+.careers-page {
+  &__block {
+    background: get-color-from-palette('background-blue');
+    &__youtube-embedded-video-frame {
+      width: 100%;
+      height: 325px;
+    }
+    &__careers-oportunities {
+      padding-top: 90px;
+      padding-bottom: 99px;
+      &__title {
+        color: get-color-from-palette('text-primary');
+        font-family: 'gotham-bold';
+        font-size: 42px;
+        letter-spacing: 0.16px;
+        line-height: 50px;
+        margin-bottom: 32px;
+      }
+      &__description {
+        color: #FFFFFF;
+        font-family: 'gotham-book';
+        font-size: 18px;
+        letter-spacing: 0.05px;
+        line-height: 32px;
+        margin-bottom: 50px;
+      }
+      &__oportunity-block {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.39);
+        padding-bottom: 25px;
+        &:not(:last-of-type) {
+          margin-bottom: 45px;
+        }
+        &__text-block{
+          flex: 1 1 90%;
+          &__text-title {
+            display: block;
+            color: #FFFFFF;
+            font-family: 'gotham-medium';
+            font-size: 30px;
+            letter-spacing: 0.08px;
+            line-height: 36px;
+          }
+          &__text-level {
+            display: block;
+            color: #F00381;
+            font-family: 'gotham-black';
+            font-size: 12px;
+            letter-spacing: 3.46px;
+            line-height: 16px;
+          }
+          &__text-city {
+            display: block;
+            margin-top: 30px;
+            color: #FFFFFF;
+            font-family: 'gotham-black';
+            font-size: 12px;
+            letter-spacing: 3.46px;
+            line-height: 16px;
+          }
+        }
+        &__arrow-block{
+          flex: 0 1 auto;
+          &__arrow-img {
+            height: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@import "~bulma";
+
+@include tablet {
+}
+
+@include widescreen {
+  .careers-page__block__youtube-embedded-video-frame {
+    height: 635px !important;
+  }
+
+  .careers-page__block__careers-oportunities {
+    padding-top: 226px;
+    padding-bottom: 234px;
+  }
+
+  .careers-page__block__careers-oportunities__title {
+    width: 70%;
+  }
+  .careers-page__block__careers-oportunities__description {
+    width: 70%;
+    margin-bottom: 188px;
+  }
+
+  .careers-page__block__careers-oportunities__oportunity-block {
+    &:not(:last-of-type) {
+      margin-bottom: 62px;
+      padding-bottom: 55px;
+    }
+  }
+}

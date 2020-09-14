@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+   sodipodi:docname="arrow_down-white.svg"
+   id="svg11"
+   version="1.1"
+   viewBox="0 0 27.319551 77.817535"
+   height="77.817535"
+   width="27.319551">
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>AA174CE4-A7DB-4E9A-901E-7A96FA8F111B</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs15" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg11"
+     inkscape:window-maximized="1"
+     inkscape:window-y="27"
+     inkscape:window-x="0"
+     inkscape:cy="42.50588"
+     inkscape:cx="21.909066"
+     inkscape:zoom="15.911392"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     showgrid="false"
+     id="namedview13"
+     inkscape:window-height="988"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <title
+     id="title2">AA174CE4-A7DB-4E9A-901E-7A96FA8F111B</title>
+  <g
+     transform="rotate(90,14.277614,13.526606)"
+     fill-rule="evenodd"
+     fill="none"
+     stroke-width="1"
+     stroke="none"
+     id="SitoCWS">
+    <g
+       fill="#ffffff"
+       transform="translate(-348,-4453)"
+       id="Home">
+      <g
+         transform="translate(0,3785)"
+         id="case-history">
+        <g
+           transform="translate(172,165)"
+           id="Group-20">
+          <g
+             transform="translate(6,503)"
+             id="Group-3">
+            <g
+               transform="rotate(90,124.5,124.5)"
+               id="arrow_right-slider">
+              <path
+                 id="Outline"
+                 d="M 13.034001,4.2545644 V 77.129324 c 0,0.618057 0.496981,1.119668 1.109333,1.119668 0.612352,0 1.109334,-0.501611 1.109334,-1.119668 V 4.2545644 L 25.911142,15.010102 c 0.43264,0.436671 1.133739,0.436671 1.568598,0 0.43264,-0.43667 0.43264,-1.146541 0,-1.583211 L 14.928742,0.75895858 c -0.43264,-0.43667081 -1.135957,-0.43667081 -1.568597,0 L 0.80914773,13.426891 c -0.43264,0.43667 -0.43264,1.146541 0,1.583211 0.43263997,0.436671 1.13595737,0.436671 1.56859737,0 z" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

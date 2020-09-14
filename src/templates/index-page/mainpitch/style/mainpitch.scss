@@ -1,16 +1,17 @@
 @import "../../../../styles/palette.scss";
+@import "../../../../styles/variables";
 
 $title-line-height: 1.2;
 
 .home {
     &__mainpitch {
-        padding-top: 140px !important;
-        padding-bottom: 65px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
         position: relative;
         align-items: center;
         margin-bottom: initial !important;
         background: get-color-from-palette("background-primary-gradient");
-        color: #fff;
+        color: $castleton-green;
         &__title {
             font-family: 'gotham-bold';
             display: flex;
@@ -42,8 +43,8 @@ $title-line-height: 1.2;
 @include tablet {
     .home{
         &__mainpitch{
-            padding-top: 180px !important;
-            padding-bottom: 150px !important;
+            padding-top: 80px !important;
+            padding-bottom: 40px !important;
             &__title {
                 margin-bottom: initial;
                 h1 {
@@ -66,14 +67,14 @@ $title-line-height: 1.2;
 @include desktop {
     .home{
         &__mainpitch {
-            padding-top: 224px !important;
+            padding-top: 124px !important;
             padding-bottom: 194px !important;
-            height: 85vh;
+            height: 65vh;
             &__title {
                 margin-bottom: initial;
                 h1 {
-                    font-size: 42px !important;
-                    line-height: 60px !important;
+                    font-size: 32px !important;
+                    line-height: 45px !important;
                 }
             }
             &__image__container {
@@ -90,8 +91,9 @@ $title-line-height: 1.2;
 @include widescreen {
     .home{
         &__mainpitch {
-            padding-top: 224px !important;
-            padding-bottom: 143px !important;
+            padding-top: 80px !important;
+            padding-bottom: 60px !important;
+            height: 50vh;
             &__title {
                 margin-bottom: initial;
                 h1 {

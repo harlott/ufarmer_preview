@@ -9,30 +9,40 @@ import SafeImage from "../../../components/SafeImage";
 import topImage from '../../../../static/img/landascape1-home-top.jpg';
 
 const Mainpitch = ({ text, image, theme }) => {
-    console.log(topImage);
     return (
-        <div
-            className={`home__mainpitch is-gapless ${theme || ''}`}
-            style={
-                {'background': `url(${topImage}) no-repeat`, 'background-size': '100%', 'background-position': 'center center', 'opacity': '1'}
-            }>
-            <div className="main-content-container main-content-padding">
-                <div className="is-vcentered columns">
-                    <div className="home__mainpitch__image__container column">
-                        <SafeImage image={image || mainImage} className="home__mainpitch__image" />
-                    </div>
-                    <div className="column no-padding">
-                        <div className="home__mainpitch__title  is-size-3-widescreen">
-                            <h1 className="has-text-weight-bold">
-                                {text}
-                            </h1>
+        <>
+            <div
+                className={`home__mainpitch is-gapless ${theme || ''}`}
+                style={{background: '#fff'}}
+                >
+                <div className="main-content-container main-content-padding">
+                    <div className="is-vcentered columns">
+                        <div className="home__mainpitch__image__container column">
+                            <SafeImage image={image || mainImage} className="home__mainpitch__image" />
+                        </div>
+                        <div className="column no-padding">
+                            <div className="home__mainpitch__title  is-size-3-widescreen">
+                                <h1 className="has-text-weight-bold">
+                                    {text}
+                                </h1>
+                            </div>
                         </div>
                     </div>
+                    <ContentIndicator hide={true}/>
                 </div>
-                <ContentIndicator hide={true}/>
+
             </div>
-            
-        </div>
+            <div style={
+                {
+                    'background': `url(${topImage}) no-repeat`,
+                    'background-size': '100%',
+                    'background-position': 'center center',
+                    'opacity': '1',
+                    'width': '100%',
+                    'height': '40vh'
+                }
+            } />
+        </>
     )
 }
 

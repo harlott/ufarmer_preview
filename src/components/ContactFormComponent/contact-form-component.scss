@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+$green-light: #d3e691;
 .contact-form-component {
     &__mobile-layout {
         margin: 0px auto !important;
@@ -20,11 +22,11 @@
     }
     &__second-title {
         font-family: 'gotham-bold';
-        font-size: 38px !important;
-        line-height: 38px;
+        font-size: 18px !important;
+        line-height: 28px;
         letter-spacing: -0.19px;
         font-weight: bold;
-        color: #110553;
+        color: $green-light;
         text-align: left;
         margin-bottom: 55px;
     }
@@ -40,7 +42,7 @@
     &__form-button {
         display: block;
         margin: 0px auto;
-        border: 1px solid #110553;
+        border: 1px solid $green-light;
         background: transparent;
         border-radius: 69.23px;
         width: 268px;
@@ -49,13 +51,13 @@
         font-size: 22px;
         line-height: 26px;
         letter-spacing: -0.15px;
-        color: #110553;
+        color: $green-light;
         cursor: pointer;
         transition: all .15s ease-in-out;
         &:hover {
             border: 1px solid #FFFFFF;
             background-color: #FFFFFF;
-            color: #F00381;
+            color: $dark-olive-green;
         }
     }
 }
@@ -119,13 +121,13 @@
     }
 
     .contact-form-component__first-title {
-        font-size: 59px !important;
+        font-size: 50px !important;
         line-height: 69px !important;
     }
 
     .contact-form-component__second-title {
-        font-size: 74px !important;
-        line-height: 80px !important;
+        font-size: 28px !important;
+        line-height: 40px !important;
     }
 
     .contact-form-component__question {

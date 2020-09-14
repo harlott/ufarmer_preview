@@ -12,9 +12,9 @@ const ContactFormComponent = ({ formTexts, questionText, formId, dispatch }) => 
     dispatch(activate(formId));
   }
 
-  const defFirstTitle = _get(formTexts, 'firstTitle') || _get(formTexts, 'title') || 'Vuoi rimanere aggiornato sulle ultime news?';
-  const defSecondTitle = _get(formTexts, 'secondTitle') || _get(formTexts, 'description') || 'Iscriviti alla newsletter';
-  const defButtonText = _get(formTexts, 'buttonText') || _get(formTexts, 'button') || 'Iscriviti';
+  const defFirstTitle = _get(formTexts, 'firstTitle') || _get(formTexts, 'title') || 'Scopri di più su UFarmer';
+  const defSecondTitle = _get(formTexts, 'secondTitle') || _get(formTexts, 'description') || 'Lascia il tuo contatto email, ti avviseremo in esclusiva per il go-live del progetto e ti spiegheremo come entrare a farne parte.';
+  const defButtonText = _get(formTexts, 'buttonText') || _get(formTexts, 'button') || 'Lascia il tuo contatto';
   return (
     <>
       <div className="contact-form-component__mobile-layout" style={{'background-color': '#2D6F2Dff'}}>

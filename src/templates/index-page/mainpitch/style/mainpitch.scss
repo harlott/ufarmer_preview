@@ -10,8 +10,13 @@ $title-line-height: 1.2;
         position: relative;
         align-items: center;
         margin-bottom: initial !important;
-        background: get-color-from-palette("background-primary-gradient");
         color: $castleton-green;
+        background-size: 200% !important;
+        background-position: center center;
+        background-repeat: no-repeat;
+        .main-content-container.main-content-padding{
+            background: rgba(255, 255, 255, 0.6);
+        }
         &__title {
             font-family: 'gotham-bold';
             display: flex;
@@ -19,7 +24,7 @@ $title-line-height: 1.2;
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            padding-bottom: 36.3px;
+            padding-bottom: 25px;
             h1 {
                 font-size: 31px !important;
                 letter-spacing: 0.08px;
@@ -43,8 +48,9 @@ $title-line-height: 1.2;
 @include tablet {
     .home{
         &__mainpitch{
-            padding-top: 80px !important;
+            padding-top: 40px !important;
             padding-bottom: 40px !important;
+            background-size: 100%;
             &__title {
                 margin-bottom: initial;
                 h1 {
@@ -67,7 +73,7 @@ $title-line-height: 1.2;
 @include desktop {
     .home{
         &__mainpitch {
-            padding-top: 124px !important;
+            padding-top: 104px !important;
             padding-bottom: 194px !important;
             height: 65vh;
             &__title {
@@ -76,6 +82,7 @@ $title-line-height: 1.2;
                     font-size: 32px !important;
                     line-height: 45px !important;
                 }
+                padding-top: 25px;
             }
             &__image__container {
                 text-align: right;
@@ -91,9 +98,9 @@ $title-line-height: 1.2;
 @include widescreen {
     .home{
         &__mainpitch {
-            padding-top: 80px !important;
-            padding-bottom: 60px !important;
-            height: 50vh;
+            padding-top: 200px !important;
+            padding-bottom: 143px !important;
+            height: 85vh;
             &__title {
                 margin-bottom: initial;
                 h1 {

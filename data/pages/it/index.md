@@ -1,10 +1,10 @@
 ---
 templateKey: index-page
-pageTitle: UFarmer - Firmato da te
-metaDescription: UFarmer
+pageTitle: UFarmer | L'eccellenza enogastronomica firmata da te
+metaDescription: Sostenibilità ed eccellenza enogastronomica hanno il tuo nome
 metaKeywords: UFarmer
 mainpitch:
-  text: Sostenibilità ed eccellenza enogastronomica hanno il tuo nome
+  text: Adotta la tua pianta, dalle il tuo nome e ottieni il tuo prodotto personalizzato
   imageDescription: main description it
   image: /img/logo-home.png
 mainSections:

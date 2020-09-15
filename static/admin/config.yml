@@ -1,7 +1,7 @@
 backend:
   name: github
   branch: develop
-  repo: cwssrl/cws_site # change this to your repo
+  repo: harlott/ufarmer_preview # change this to your repo
   base_url: https://cws-site-oauth.azurewebsites.net/ # change this to your OAuth server
   publish_mode: editorial_workflow
 media_folder: /static/img

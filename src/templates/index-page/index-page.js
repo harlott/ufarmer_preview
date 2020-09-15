@@ -60,7 +60,7 @@ const IndexPage = ({ data }) => {
         areasTitle={frontmatter.areasTitle}
         areas={frontmatter.areas}
       />
-        {/*<ContactFormComponent theme="green" formId={frontmatter.formId} />*/}
+      <ContactFormComponent theme="green" formId={frontmatter.formId} />
     </Layout>
   );
 };

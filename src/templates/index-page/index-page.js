@@ -1,24 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
-import _get from "lodash/get";
 
 import Layout from "../../components/Layout";
 import Mainpitch from "./mainpitch/Mainpitch";
-import DigitalTransformation from "../../components/digitalTransformationSection/DigitalTransformation";
 import SectorCardsFullContainer from "../../components/SectorCardsContainerComponent/SectorCardsFullContainer";
 
-import CompetenceCenter from "./competenceCenter/CompetenceCenter";
-import CaseStudyExpanded from "./caseHistoryExpanded/caseStudyExpanded";
-import CaseHistory from "./caseHistory/CaseHistory";
-import Livion from "./livion/Livion";
 
 import "./home.scss";
 import ContactFormComponent from "../../components/ContactFormComponent/ContactFormComponent";
 import SEO from "../../components/Seo";
 
 export const IndexPageTemplate = ({
-  mainSections,
   mainpitch,
   areas,
   areasTitle

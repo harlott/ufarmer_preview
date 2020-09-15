@@ -6,14 +6,14 @@ import ContentIndicator from '../../../components/ContentIndicator/ContentIndica
 import './style/mainpitch.scss';
 import SafeImage from "../../../components/SafeImage";
 
-import topImage from '../../../../static/img/landascape1-home-top.jpg';
+import topImage from '../../../../static/img/landscape-home-country.jpg';
 
 const Mainpitch = ({ text, image, theme }) => {
     return (
         <>
             <div
                 className={`home__mainpitch is-gapless ${theme || ''}`}
-                style={{background: '#fff'}}
+                style={{'background-image': `url(${topImage})`}}
                 >
                 <div className="main-content-container main-content-padding">
                     <div className="is-vcentered columns">
@@ -30,18 +30,7 @@ const Mainpitch = ({ text, image, theme }) => {
                     </div>
                     <ContentIndicator hide={true}/>
                 </div>
-
             </div>
-            <div style={
-                {
-                    'background': `url(${topImage}) no-repeat`,
-                    'background-size': '100%',
-                    'background-position': 'center center',
-                    'opacity': '1',
-                    'width': '100%',
-                    'height': '40vh'
-                }
-            } />
         </>
     )
 }

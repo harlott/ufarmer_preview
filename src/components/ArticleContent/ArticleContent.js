@@ -32,20 +32,20 @@ const ArticleContent = ({ type, title, cover, formId, formLabel, preview, theme,
           <div className="article-content__article-details column is-two-third-tablet">
             <div className="article-content__article-details__content">
               <div className="article-content__article-details__content__resume">
-                {_get(author, 'length',0) > 0 &&
+                {_get(author, 'length',0) > 0 && !true &&
                   <div className="article-content__article-details__content__resume__block">
                     <span className="article-content__article-details__content__resume__block__title">Autore</span>
                     <Link to={`/authors/${author}`} className="article-content__article-details__content__resume__block__link">{formatAuthor(author)}</Link>
                   </div>
                 }
-                {_get(date, 'length', 0) > 0 &&
+                {_get(date, 'length', 0) > 0 && !true &&
                   <div className="article-content__article-details__content__resume__block">
                     <span className="article-content__article-details__content__resume__block__title">Data</span>
                     <span className="article-content__article-details__content__resume__block__content">{date}</span>
                   </div>
                 }
               </div>
-              {_get(tags, 'length', 0 ) > 0 && 
+              {_get(tags, 'length', 0 ) > 0 &&  !true &&
                 <div className="article-content__article-details__content__tags">
                   <TagsGroup tags={tags} />
                 </div>
@@ -65,11 +65,11 @@ const ArticleContent = ({ type, title, cover, formId, formLabel, preview, theme,
         <div className="columns">
           <div className="article-content__article-details column not-margin">
             <div className="article-content__article-details__article-body">
-              <div className="article-content__article-details__article-body__text-content">
-                <HTMLContent className="article-content__html-main-content" content={description} />
+              <div className="article-content__article-details__article-body__text-content" style={{color: '#333'}}>
+                <HTMLContent className="article-content__html-main-content" content={description}  />
               </div>
               {_get(quoted, 'length', 0) > 0 &&
-                <div className="article-content__article-details__article-body__quoted-content">
+                <div className="article-content__article-details__article-body__quoted-content" style={{color: '#333'}}>
                   <HTMLContent className="article-content__html-main-quoted" content={quoted} />
                 </div>
               }
@@ -83,7 +83,7 @@ const ArticleContent = ({ type, title, cover, formId, formLabel, preview, theme,
               <div className="article-content__article-details column not-margin">
                 <div className="article-content__article-details__article-body">
                 {!!_get(currentBlock, 'title', null) &&
-                  <h2 className="article-content__article-details__article-body__title-block">
+                  <h2 className="article-content__article-details__article-body__title-block" style={{color: '#333'}}>
                     <ReactMarkdown
                         source={currentBlock.title}
                         escapeHtml={false}
@@ -91,8 +91,8 @@ const ArticleContent = ({ type, title, cover, formId, formLabel, preview, theme,
                   </h2>
                 }
                 {!!_get(currentBlock, 'description', null) &&
-                  <div className="article-content__article-details__article-body__text-content">
-                    <HTMLContent className="article-content__html-content" content={currentBlock.description} />
+                  <div className="article-content__article-details__article-body__text-content" style={{color: '#333'}}>
+                    <HTMLContent className="article-content__html-content" content={currentBlock.description}  />
                   </div>
                 }
                 </div>

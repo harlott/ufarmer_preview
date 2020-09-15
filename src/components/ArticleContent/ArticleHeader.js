@@ -8,9 +8,8 @@ const ArticleHeader = props => (
   <div className={`article-header no-image article-theme-${props.theme}`}>
     <div className="article-header__page-title">
       <div className="main-content-container main-content-padding article-header__page-title__text-block">
-        <h2 className="article-header__page-title__text-block__category">{props.type}</h2>
-        <h3 className="article-header__page-title__text-block__title">
-          <GradientTitle direction="left-right" colors={['#4500ce', '#ff007b']} text={props.title} />
+        <h3 className="article-header__page-title__text-block__title" style={{color: '#333'}}>
+          {props.title}
         </h3>
       </div>
     </div>

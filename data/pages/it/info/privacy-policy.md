@@ -7,7 +7,7 @@ socialPreviewImage: /img/cws-chi-siamo-1200x628.png
 date: 2020-09-02T08:21:42.860Z
 title: Privacy Policy
 subtitle: CWS Digital Solutions
-description: La privacy policy è composta dai seguenti documenti
+description: " "
 quoted: "" 
 blocks:
   - title: <span id="sezione1">Informativa generale per il trattamento dei dati

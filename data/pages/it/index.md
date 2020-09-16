@@ -47,18 +47,18 @@ areasTitle: ""
 areas:
   - title: ""
     description: Un supporto alla sostenibilità del territorio
-    image: /img/sostenibilita_def.png
+    image: /img/icons/sostenibilita_light.png
   - title: ""
     description: Un prodotto esclusivo dal valore unico
-    image: /img/esclusivita_def.png
+    image: /img/icons/esclusivita_light.png
   - title: ""
     description: Personalizzato per te, con la tua firma
-    image: /img/personalizzazione_def.png
+    image: /img/icons/personalizzazione_light.png
   - title: ""
     description: Di provenienza certa
-    image: /img/provenienza_certa_def.png
+    image: /img/icons/provenienza_light.png
   - title: ""
     description: Di qualità selezionata
-    image: /img/qualita_def.png 
+    image: /img/icons/qualita_light.png 
   
 ---

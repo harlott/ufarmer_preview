@@ -19,6 +19,18 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `UFarmer | Firmato da te`,
+        short_name: `UFarmer`,
+        start_url: `/`,
+        icon: `static/img/favicon.png`,
+        background_color: `#3E6714ff`,
+        theme_color: `#3E6714ff`,
+        display: `standalone`,
+      },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-preload-fonts`,
     'gatsby-plugin-react-helmet',

@@ -13,7 +13,7 @@ const ContactFormComponent = ({ formTexts, questionText, formId, dispatch }) => 
   }
 
   const defFirstTitle = _get(formTexts, 'firstTitle') || _get(formTexts, 'title') || 'Scopri di più su UFarmer';
-  const defSecondTitle = _get(formTexts, 'secondTitle') || _get(formTexts, 'description') || 'Lascia il tuo contatto email, ti avviseremo in esclusiva per il go-live del progetto e ti spiegheremo come entrare a farne parte.';
+  const defSecondTitle = _get(formTexts, 'secondTitle') || _get(formTexts, 'description') || 'È sufficiente la tua email, ti avviseremo quando la piattaforma sarà pronta e scoprirai in anteprima come funziona il nostro progetto.';
   const defButtonText = _get(formTexts, 'buttonText') || _get(formTexts, 'button') || 'Lascia il tuo contatto';
   return (
     <>

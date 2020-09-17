@@ -14,7 +14,7 @@
 
 .sector-cards-full-theme-green{
   color: #ffffff;
-  background: $gradient-right !important;
+  background: linear-gradient(90deg, #212322, #5A5357) !important;
   .sector-card-full-component__container__image{
     background-image: initial !important;
   }
@@ -97,6 +97,7 @@
       background-position: center;
       background-repeat: no-repeat;
       padding: 35px !important;
+      padding-bottom: 0px !important;
       text-align: center;
       &__imageClass {
         width: 100% !important;
@@ -125,7 +126,7 @@
         font-size: 20px !important;
         line-height: 27px;
         letter-spacing: 0.04px;
-        text-align: left;
+        text-align: center;
         margin: 10.5px 0px !important;
         width: 100%;
         max-width: 580px;

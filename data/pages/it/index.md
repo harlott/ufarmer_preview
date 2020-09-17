@@ -4,7 +4,7 @@ pageTitle: UFarmer | L'eccellenza enogastronomica firmata da te
 metaDescription: Sostenibilità ed eccellenza enogastronomica hanno il tuo nome
 metaKeywords: UFarmer
 mainpitch:
-  text: Adotta la tua pianta, dalle il tuo nome e ottieni il tuo prodotto personalizzato
+  text: Adotta la tua pianta, dalle il tuo nome e ottieni il tuo prodotto personalizzato.
   imageDescription: main description it
   image: /img/logo-home.png
 mainSections:

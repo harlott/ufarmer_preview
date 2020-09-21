@@ -82,7 +82,7 @@
   }
   &__html-main-content, &__html-content {
     h1 {
-      color: get-color-from-palette("background-blue");
+      color: #4a4a4a;
       font-family: 'gotham-bold';
       font-size: 38px !important;
       line-height: 38px !important;
@@ -90,7 +90,7 @@
       margin-bottom: 32px !important;
     }
     h2 {
-      color: get-color-from-palette("background-blue");
+      color: #4a4a4a;
       font-family: 'gotham-medium';
       font-size: 30px;
       line-height: 40px;
@@ -141,7 +141,7 @@
         margin-bottom: 32px !important;
         &__block {
           display: block;
-          color: get-color-from-palette('background-blue');
+          color: #4a4a4a;
           &:not(:last-of-type) {
             margin-bottom: 10px;
           }
@@ -164,9 +164,9 @@
             font-size: 16px !important;
             line-height: 21px !important;
             letter-spacing: 0.2px !important;
-            color: get-color-from-palette('background-blue');
+            color: #4a4a4a;
             &:hover, &:visited {
-              color: get-color-from-palette('background-blue');
+              color: #4a4a4a;
             }
           }
         }
@@ -216,7 +216,7 @@
         }
       }
       &__title-block {
-        color: get-color-from-palette('background-blue');
+        color: #4a4a4a;
         font-family: 'gotham-medium';
         font-size: 28px;
         line-height: 34px;
@@ -224,7 +224,7 @@
         margin-bottom: 40px !important;
       }
       &__text-content {
-        color: get-color-from-palette('background-blue');
+        color: #4a4a4a;
         font-family: 'gotham-book';
         font-size: 18px;
         line-height: 32px;

@@ -37,7 +37,7 @@ class CookiesPolicy extends React.Component {
               <div className="cookies-policy-widget__container__content">
                 <div className="cookies-policy-widget__container__content__text-container">
                   <p className="cookies-policy-widget__container__content__text-container__description">Questo sito web richiede i cookie.</p>
-                  <Link to="info/cookies-policy" className="cookies-policy-widget__container__content__text-container__link">Cookies Policy</Link>
+                  <Link to="info/cookie-policy" className="cookies-policy-widget__container__content__text-container__link">Cookie Policy</Link>
                 </div>
                 <div className="cookies-policy-widget__container__content__button-container">
                   <button className="cookies-policy-widget__container__content__button-container__button" onClick={this.onAcceptCookies.bind(this)}>OK</button>

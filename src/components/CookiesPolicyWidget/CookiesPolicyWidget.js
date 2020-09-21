@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 import './cookiesPolicy.scss';
 import { Link } from 'gatsby';
 

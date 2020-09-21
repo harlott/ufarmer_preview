@@ -19,10 +19,9 @@ const TemplateWrapper = ({ children, menuActive, theme }) => {
         </Helmet>
         {/* <Navbar theme={theme}/> */}
         <div>{children}</div>
-        {/*
-            <Footer />
+        {/*<Footer />*/
       <CookiesPolicy />
-        */}
+        }
     </div>
   )
 }

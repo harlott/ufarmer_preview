@@ -1,5 +1,5 @@
 @import '../../styles/palette.scss';
-
+@import '../../styles/variables.scss';
 .cookies-policy-widget {
   pointer-events: none;
   touch-action: none;
@@ -24,7 +24,8 @@
       left: 0;
       width: 100%;
       padding: 14px 51px 11px 47px;
-      background-color: get-color-from-palette('link-primary');
+      background-color: $olive-drab-3;
+      border-radius: 25.5px !important;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -43,9 +44,9 @@
         &__link {
           padding: 0 !important;
           margin: 0 !important;
-          color: get-color-from-palette('background-primary');
+          color: $citrine;
           &:hover {
-            color: get-color-from-palette('white');
+            color: $icterine;
           }
         }
       }
@@ -58,7 +59,7 @@
           height: 51px !important;
           border-radius: 25.5px !important;
           color: get-color-from-palette('white');
-          background-color: get-color-from-palette('background-blue');
+          background-color: $castleton-green;
           font-family: 'gotham-bold';
           font-size: 12px;
           line-height: 20px;

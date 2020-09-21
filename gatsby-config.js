@@ -1,10 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: 'UFARMER DEFAULT',
+    title: 'UFarmer',
     description:
-      'UFARMER DEFAULT',
-    author: 'CWS S.r.l',
-    siteUrl: 'https://www.cws.it'
+      'Ufarmer',
+    author: 'UFarmer S.r.l',
+    siteUrl: 'https://www.ufarmer.it'
   },
   plugins: [
     {
@@ -91,6 +91,23 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-WBK4W62",
+
+        // Include GTM in development.
+        //
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: true,
+
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        //
+        // Defaults to null
+        defaultDataLayer: { platform: "ufarmer_site" }
       },
     },
   ],

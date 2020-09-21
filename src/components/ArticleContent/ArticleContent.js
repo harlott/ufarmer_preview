@@ -17,7 +17,7 @@ import ButtonDownload from "../ButtonDonwload";
 
 const formatAuthor = (author) => (startCase(toLower((author.replace("-", " ")))));
 
-const ArticleContent = ({ type, title, cover, formId, formLabel, preview, theme, author, date, tags, description, quoted, blocks }) => {
+const ArticleContent = ({ type, title, cover, formId, formLabel, preview, theme, author, date, tags, description, quoted, blocks, html }) => {
   return (
   <>
     {!!cover && 
@@ -134,6 +134,9 @@ const ArticleContent = ({ type, title, cover, formId, formLabel, preview, theme,
                 </div>
                 <div className="column is-one-third-tablet article-content__blank" />
               </div>
+            }
+            {!!html &&
+            <HTMLContent className="article-content__html-content" content={html} />
             }
           </div>
         ))}

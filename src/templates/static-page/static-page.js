@@ -18,6 +18,7 @@ export const StaticPageTemplate = ({
   date,
   author,
   blocks,
+  html,
 }) => {
   return (
       <ArticleContent
@@ -32,6 +33,7 @@ export const StaticPageTemplate = ({
         quoted={quoted}
         tags={tags}
         blocks={blocks}
+        html={html}
       />
   );
 };
@@ -76,6 +78,7 @@ const StaticPage = ({ data }) => {
           cover={post.frontmatter.featuredimage}
           quoted={post.frontmatter.quoted}
           blocks={post.frontmatter.blocks}
+          html={post.html}
         />
         <ContactFormComponent formId={post.frontmatter.formId}/>
       </Layout>

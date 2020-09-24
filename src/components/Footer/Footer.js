@@ -5,7 +5,7 @@ import map from 'lodash/map'
 
 import FooterSocialSection from './FooterSocialSection'
 
-import brandLogoBlack from '../../../static/img/brand_logo/brand_logo_black.svg'
+import brandLogoBlack from '../../../static/img/logo-home.png'
 
 import menuConfig from '../../../config/menu/it.json'
 
@@ -17,7 +17,9 @@ const Footer = class extends React.Component {
       <footer className="site_footer">
         <div className="main-content-container main-content-padding">
           <div className="site_footer__container">
-            <div className="columns site_footer__navigation">
+            
+            {/*
+              <div className="columns site_footer__navigation">
               <div className="column static-size site_footer__navigation__brand">
                 <Link to="/" className="site_footer__navigation__brand__link">
                   <img src={brandLogoBlack} className="site_footer__navigation__brand__link__image" alt="CWS brand logo in black"/>
@@ -52,16 +54,18 @@ const Footer = class extends React.Component {
                   ))}
                 </nav>
               </div>
-            </div>
-            <div className="social-container-tablet">
-              <div className="columns">
-                <div className="column site_footer__navigation__social">
-                  <FooterSocialSection menuConfig={menuConfig} />
+            </div> 
+              <div className="social-container-tablet">
+                <div className="columns">
+                  <div className="column site_footer__navigation__social">
+                    <FooterSocialSection menuConfig={menuConfig} />
+                  </div>
                 </div>
               </div>
-            </div>
+            */}
+            
             <div className="site_footer__fiscal">
-              CWS S.r.l. NIN and VAT code 01906190242 - Registered Capital € 500.000,00 i.v. - Business Register 01906190242 - REA N. VI-193254 - DUNS: 439606195
+              UFarmer S.r.l. NIN and VAT code 11350220965 - REA N. MI-2596977
             </div>
             <div className="columns">
               <div className="column">

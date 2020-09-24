@@ -3,9 +3,8 @@
 .site_footer {
   font-family: 'gotham-book';
   box-sizing: border-box;
-  min-height: 716px;
   width: 100%;
-  padding: 62px 0px;
+  padding: 0px 0px;
   background-color: get-color-from-palette('background-secondary');
   &__navigation {
     box-sizing: border-box;
@@ -120,10 +119,6 @@
 @import "~bulma";
 
 @include tablet {
-  .site_footer {
-    padding: 124px 0px;
-  }
-
   .site_footer__navigation {
     .column.first{
       flex: none !important;
